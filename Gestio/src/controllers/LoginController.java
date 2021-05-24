@@ -9,13 +9,14 @@ import javafx.fxml.FXML;
 public class LoginController extends MainController {
 	
 	@FXML
-	protected void handleClickBtn(ActionEvent e) {
-		System.out.println("Clicked babe Login ! ");
+	protected void loginBtnClick(ActionEvent e) {
+		System.out.println("Clicked on the Login ! ");
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		System.out.println("Hello babe Login ! ");
+		System.out.println("curent page : Login page ");
 		
 	}
+	
 }
