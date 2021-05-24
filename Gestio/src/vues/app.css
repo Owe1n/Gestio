@@ -11,10 +11,13 @@
    
 }
 
-.root{
+@font-face {
+    src: url('../fonts/Lato-Regular.ttf');
+}
 
-    -fx-font-family: "Lato Semibold";
-
+.label {
+    -fx-font-family: 'Lato-Regular';
+    -fx-font-size: 16;
 }
 
 .basicPane{
@@ -28,13 +31,17 @@
 	-fx-background-color: #ffffff;
 }
 
+.infinitHeight{
+	-fx-pref-height: 100%;
+}
 
 .button{
 	-fx-background-radius: 20;
 	-fx-background-color: -fx-blue;
 	-fx-text-fill: #ffffff;
 	-fx-font-weight: 600;
-	-fx-font-size: 16px;
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
 }
 
 .button:hover{
@@ -63,18 +70,76 @@
 
 }
 
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+
 
 /*topnav START */
 .topnav{
 	-fx-alignment: top-center;
 	-fx-min-height: 80px;
+	-fx-max-height: 80px;
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
 	-fx-background-color: -fx-blue;
 }
 /*MENU END */
 
-/* topnav START */
-.vboxInPanelLogin{
-	
+/*Demandes START */
+.demandeUserImg{
+	-fx-background-radius: 10000;
+	-fx-background-color: #1c1c1c;
+	-fx-min-height: 50px;
+	-fx-max-height: 50px;
+	-fx-min-width: 50px;
+	-fx-max-width: 50px;
 }
-/* Login END */
+
+.demandeUserName{
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+}
+
+.demandeCount{
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+}
+
+.demandeRefuser{
+	-fx-text-fill: -fx-blue;
+}
+
+.demandeRefuser:hover{
+	-fx-text-fill: -fx-blue-hover;
+	-fx-cursor: hand;
+}
+
+.demandeRefuser:pressed{
+	-fx-text-fill: -fx-blue-cliked;
+}
+
+.demandeCard{
+	-fx-max-width: 450px;
+	-fx-max-height: 550px;
+	-fx-min-height: 400px;
+	-fx-min-width: 350px;
+
+	-fx-pref-width: 100%;
+	-fx-pref-height: 100%;
+	-fx-background-radius: 20;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
+	-fx-background-color: #ffffff;
+}
+/*Demandes END */
