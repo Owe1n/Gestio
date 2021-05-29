@@ -1,4 +1,4 @@
-module Gestio {
+module menuTest {
 	requires javafx.controls;
 	requires javafx.fxml;
 	

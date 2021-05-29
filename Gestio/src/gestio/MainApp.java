@@ -14,7 +14,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Parent loginPage = FXMLLoader.load(getClass().getResource("/vues/Login.fxml"));
+		Parent loginPage = FXMLLoader.load(getClass().getResource("/vues/Main.fxml"));
 		
 		Scene scene = new Scene(loginPage);
 		

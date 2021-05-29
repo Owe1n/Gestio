@@ -11,47 +11,44 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="topnav" stylesheets="@app.css" />
-      <ScrollPane fitToWidth="true" prefHeight="99999.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DemandesController">
    <content>
-      <!-- do not put bounds on the FlowPane size -->
       <FlowPane alignment="TOP_CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
          <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
-                                       <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
-                                       </children>
-                                    </VBox>
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
+                                       <font>
+                                          <Font name="Lato Semibold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin></Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
-                              <content>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
                               <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
@@ -79,543 +76,541 @@
                                        </children>
                                     </VBox>
                                  </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
                               </FlowPane>
-                              </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
-                                       <font>
-                                          <Font size="22.0" />
-                                       </font></Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Button mnemonicParsing="false" onAction="#valideBtnClick" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
+                                       <font>
+                                          <Font name="Lato Semibold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
                                        <font>
-                                          <Font size="22.0" />
+                                          <Font name="Lato Semibold" size="26.0" />
                                        </font>
                                     </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
                                        <font>
-                                          <Font size="22.0" />
+                                          <Font name="Lato Semibold" size="26.0" />
                                        </font>
                                     </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
                                        <font>
-                                          <Font size="22.0" />
+                                          <Font name="Lato Semibold" size="26.0" />
                                        </font>
                                     </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
                                        <font>
-                                          <Font size="22.0" />
+                                          <Font name="Lato Semibold" size="26.0" />
                                        </font>
                                     </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
+                                 <HBox.margin>
+                                    <Insets left="40.0" right="20.0" />
+                                 </HBox.margin>
+                              </Pane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
                                  <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
+                                    <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
                                        <font>
-                                          <Font size="22.0" />
+                                          <Font name="Lato Semibold" size="26.0" />
                                        </font>
                                     </Label>
+                                    <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="demandeCard">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Pane>
+                           </children>
+                        </HBox>
+                        <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
+                           <content>
+                              <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="demandeUserImg">
-                                       <HBox.margin>
-                                          <Insets left="40.0" right="20.0" />
-                                       </HBox.margin>
-                                    </Pane>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="317.0">
+                                    <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
                                        <children>
-                                          <Label prefHeight="23.0" prefWidth="204.0" styleClass="demandeUserName" text="Laurine Despe">
-                                             <font>
-                                                <Font name="Lato Semibold" size="26.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="15.0" prefWidth="202.0" text="laurrine.despe@utbm.fr" />
+                                          <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                       <children>
+                                          <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
+                                          <Label styleClass="demandeCount" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="1.0" prefWidth="200.0">
-                                 <children>
-                                    <Pane prefHeight="49.0" prefWidth="270.0" style="-fx-background-color: #d3d3d3;">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fitToWidth="true" prefHeight="122.0" prefWidth="600.0">
-                                 <content>
-                                    <FlowPane alignment="CENTER" prefHeight="0.0" prefWidth="200.0" vgap="10.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="57.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="80.0" maxWidth="70.0" prefHeight="80.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
-                                             <children>
-                                                <Pane maxHeight="70.0" maxWidth="70.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #1c1c1c; -fx-background-radius: 10;" />
-                                                <Label styleClass="demandeCount" text="Label" />
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                       <padding>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </padding>
-                                    </FlowPane>
-                                 </content>
-                                 <VBox.margin>
-                                    <Insets bottom="30.0" top="30.0" />
-                                 </VBox.margin>
-                              </ScrollPane>
-                              <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
-                                 <children>
-                                    <Label styleClass="demandeRefuser" text="refuser">
-                                       <font>
-                                          <Font size="22.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
+                                 <padding>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </padding>
+                              </FlowPane>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="350.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="272.0" text="valider" />
                            </children>
-                        </VBox>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="47.0" prefWidth="350.0">
+                           <children>
+                              <Label styleClass="demandeRefuser" text="refuser">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
-                  </AnchorPane>
+                  </VBox>
+               </children>
+            </AnchorPane>
          </children>
-               <padding>
-                  <Insets bottom="50.0" top="80.0" />
-               </padding>
+         <padding>
+            <Insets bottom="50.0" top="80.0" />
+         </padding>
       </FlowPane>
    </content>
 </ScrollPane>
-      
-   </children>
-</VBox>

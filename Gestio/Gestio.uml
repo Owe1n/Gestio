@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_3m2lgL7DEeuZJeIQJACZDA" name="Gestio">
+    <eAnnotations xmi:id="_4-l0gL7DEeuZJeIQJACZDA" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_4-l0gb7DEeuZJeIQJACZDA" source="codegen">
+        <details xmi:id="_4-l0gr7DEeuZJeIQJACZDA" key="codegenDirectory" value="/Gestio/src"/>
+        <details xmi:id="_53MQcL7DEeuZJeIQJACZDA" key="AssociatedSourceCode" value="/Gestio/src/controllers/DemandesController.java;2140568341/1;/Gestio/src/controllers/LoginController.java;3714971723/1;/Gestio/src/controllers/MainController.java;3870355092/1;/Gestio/src/gestio/MainApp.java;2810390052/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_5E87ML7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_5E87Mb7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_5E87Mr7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_5E9iQL7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_5E9iQb7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_5E9iQr7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_5E9iQ77DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_5E9iRL7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_5E-JUL7DEeuZJeIQJACZDA">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5FBzsL7DEeuZJeIQJACZDA" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FBzsb7DEeuZJeIQJACZDA" name="net">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5Hf44L7DEeuZJeIQJACZDA" name="URL"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FCawL7DEeuZJeIQJACZDA" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5Hi8ML7DEeuZJeIQJACZDA" name="ResourceBundle"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5IEgoL7DEeuZJeIQJACZDA" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5IFHsL7DEeuZJeIQJACZDA" name="Exception"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5FCawb7DEeuZJeIQJACZDA" name="javafx">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FCawr7DEeuZJeIQJACZDA" name="event">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5HkKUb7DEeuZJeIQJACZDA" name="ActionEvent"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FCaw77DEeuZJeIQJACZDA" name="fxml">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_5HlYcb7DEeuZJeIQJACZDA" name="FXML"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_5HsGIL7DEeuZJeIQJACZDA" name="Initializable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5Hxlsb7DEeuZJeIQJACZDA" name="FXMLLoader"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FRrUL7DEeuZJeIQJACZDA" name="application">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5HwXkL7DEeuZJeIQJACZDA" name="Application"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FRrUb7DEeuZJeIQJACZDA" name="scene">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5Hyz0L7DEeuZJeIQJACZDA" name="Parent"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_5Hza4b7DEeuZJeIQJACZDA" name="Scene"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5FSSYL7DEeuZJeIQJACZDA" name="stage">
+        <packagedElement xmi:type="uml:Class" xmi:id="_5H1QEL7DEeuZJeIQJACZDA" name="Stage"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5FGsML7DEeuZJeIQJACZDA" name="controllers">
+      <packagedElement xmi:type="uml:Class" xmi:id="_5FgU0L7DEeuZJeIQJACZDA" name="DemandesController">
+        <generalization xmi:id="_5HnNoL7DEeuZJeIQJACZDA" general="_5Fr7AL7DEeuZJeIQJACZDA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5IQG0L7DEeuZJeIQJACZDA" name="initialize" specification="_5H5hgL7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5IQt4L7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5IQt4b7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+          <language>java</language>
+          <body>System.out.println(&quot;curent page : Login demandes &quot;);&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_5H5hgL7DEeuZJeIQJACZDA" name="initialize" method="_5IQG0L7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5H5hgb7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5H5hgr7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5FnpkL7DEeuZJeIQJACZDA" name="LoginController">
+        <generalization xmi:id="_5Hpp4L7DEeuZJeIQJACZDA" general="_5Fr7AL7DEeuZJeIQJACZDA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5ITKIL7DEeuZJeIQJACZDA" name="loginBtnClick" specification="_5H8k0L7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5ITKIb7DEeuZJeIQJACZDA" name="e" type="_5HkKUb7DEeuZJeIQJACZDA"/>
+          <language>java</language>
+          <body>System.out.println(&quot;Clicked on the Login ! &quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5ITxML7DEeuZJeIQJACZDA" name="initialize" specification="_5H9y8L7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5ITxMb7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5ITxMr7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+          <language>java</language>
+          <body>System.out.println(&quot;curent page : Login page &quot;);&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_5H8k0L7DEeuZJeIQJACZDA" name="loginBtnClick" visibility="protected" method="_5ITKIL7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5H8k0b7DEeuZJeIQJACZDA" name="e" type="_5HkKUb7DEeuZJeIQJACZDA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_5H9y8L7DEeuZJeIQJACZDA" name="initialize" method="_5ITxML7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5H9y8b7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5H9y8r7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5Fr7AL7DEeuZJeIQJACZDA" name="MainController">
+        <interfaceRealization xmi:id="_5IBdUL7DEeuZJeIQJACZDA" client="_5Fr7AL7DEeuZJeIQJACZDA" supplier="_5HsGIL7DEeuZJeIQJACZDA" contract="_5HsGIL7DEeuZJeIQJACZDA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5ITxM77DEeuZJeIQJACZDA" name="initialize" specification="_5ICrcL7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5ITxNL7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5ITxNb7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+          <language>java</language>
+          <body>System.out.println(&quot;Hello babe ! &quot;);&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_5ICrcL7DEeuZJeIQJACZDA" name="initialize" method="_5ITxM77DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5ICrcb7DEeuZJeIQJACZDA" name="arg0" type="_5Hf44L7DEeuZJeIQJACZDA"/>
+          <ownedParameter xmi:id="_5ICrcr7DEeuZJeIQJACZDA" name="arg1" type="_5Hi8ML7DEeuZJeIQJACZDA"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5FV8wL7DEeuZJeIQJACZDA" name="gestio">
+      <packagedElement xmi:type="uml:Class" xmi:id="_5Fu-UL7DEeuZJeIQJACZDA" name="MainApp">
+        <generalization xmi:id="_5IJZIL7DEeuZJeIQJACZDA" general="_5HwXkL7DEeuZJeIQJACZDA"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5ITxNr7DEeuZJeIQJACZDA" name="main" specification="_5FwMcL7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5ITxN77DEeuZJeIQJACZDA" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5ITxOL7DEeuZJeIQJACZDA" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>launch(args);&#xD;
+	    </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5IUYQL7DEeuZJeIQJACZDA" name="start" specification="_5IG84L7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5IUYQb7DEeuZJeIQJACZDA" name="primaryStage" type="_5H1QEL7DEeuZJeIQJACZDA"/>
+          <language>java</language>
+          <body>Parent loginPage = FXMLLoader.load(getClass().getResource(&quot;/vues/Login.fxml&quot;));&#xD;
+		&#xD;
+		Scene scene = new Scene(loginPage);&#xD;
+		&#xD;
+		primaryStage.setScene(scene);&#xD;
+		primaryStage.show();&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_5FwMcL7DEeuZJeIQJACZDA" name="main" isStatic="true" method="_5ITxNr7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5FwMcb7DEeuZJeIQJACZDA" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5FxakL7DEeuZJeIQJACZDA" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_5IG84L7DEeuZJeIQJACZDA" name="start" method="_5IUYQL7DEeuZJeIQJACZDA" raisedException="_5IFHsL7DEeuZJeIQJACZDA">
+          <ownedParameter xmi:id="_5IG84b7DEeuZJeIQJACZDA" name="primaryStage" type="_5H1QEL7DEeuZJeIQJACZDA"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_4-oQwL7DEeuZJeIQJACZDA">
+      <eAnnotations xmi:id="_4-rUEL7DEeuZJeIQJACZDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_4-uXYL7DEeuZJeIQJACZDA" base_Package="_3m2lgL7DEeuZJeIQJACZDA">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:Reference xmi:id="_5HhuEL7DEeuZJeIQJACZDA" base_Element="_5Hf44L7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HkKUL7DEeuZJeIQJACZDA" base_Element="_5Hi8ML7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HlYcL7DEeuZJeIQJACZDA" base_Element="_5HkKUb7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HmmkL7DEeuZJeIQJACZDA" base_Element="_5HlYcb7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HtUQL7DEeuZJeIQJACZDA" base_Element="_5HsGIL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HxlsL7DEeuZJeIQJACZDA" base_Element="_5HwXkL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5HyMwL7DEeuZJeIQJACZDA" base_Element="_5Hxlsb7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5Hza4L7DEeuZJeIQJACZDA" base_Element="_5Hyz0L7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5H0pAL7DEeuZJeIQJACZDA" base_Element="_5Hza4b7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Reference xmi:id="_5H2eML7DEeuZJeIQJACZDA" base_Element="_5H1QEL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5H6IkL7DEeuZJeIQJACZDA" base_Element="_5H5hgL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Annotations xmi:id="_5H7WsL7DEeuZJeIQJACZDA" base_Element="_5H5hgL7DEeuZJeIQJACZDA">
+    <annotations xmi:id="_5H79wL7DEeuZJeIQJACZDA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5H8k0r7DEeuZJeIQJACZDA" base_Element="_5H8k0L7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Annotations xmi:id="_5H9L4L7DEeuZJeIQJACZDA" base_Element="_5H8k0L7DEeuZJeIQJACZDA">
+    <annotations xmi:id="_5H9L4b7DEeuZJeIQJACZDA" name="FXML"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5H-aAL7DEeuZJeIQJACZDA" base_Element="_5H9y8L7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Annotations xmi:id="_5H-aAb7DEeuZJeIQJACZDA" base_Element="_5H9y8L7DEeuZJeIQJACZDA">
+    <annotations xmi:id="_5H-aAr7DEeuZJeIQJACZDA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5IDSgL7DEeuZJeIQJACZDA" base_Element="_5ICrcL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Annotations xmi:id="_5ID5kL7DEeuZJeIQJACZDA" base_Element="_5ICrcL7DEeuZJeIQJACZDA">
+    <annotations xmi:id="_5ID5kb7DEeuZJeIQJACZDA" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_5IGV0L7DEeuZJeIQJACZDA" base_Element="_5IFHsL7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5IHj8L7DEeuZJeIQJACZDA" base_Element="_5IG84L7DEeuZJeIQJACZDA"/>
+  <UMLLabProfile:Annotations xmi:id="_5IIyEL7DEeuZJeIQJACZDA" base_Element="_5IG84L7DEeuZJeIQJACZDA">
+    <annotations xmi:id="_5IIyEb7DEeuZJeIQJACZDA" name="Override"/>
+  </UMLLabProfile:Annotations>
+</xmi:XMI>
