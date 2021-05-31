@@ -61,7 +61,7 @@
                         </PasswordField>
                         <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="450.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#loginBtnClick" prefHeight="35.0" prefWidth="150.0" text="Se connecter">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleClickLogin" prefHeight="35.0" prefWidth="150.0" text="Se connecter">
                                  <font>
                                     <Font name="Lato Black" size="12.0" />
                                  </font></Button>

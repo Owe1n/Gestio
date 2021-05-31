@@ -4,6 +4,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
 
 <BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <top>
@@ -17,9 +28,19 @@
                   <Button mnemonicParsing="false" onMouseClicked="#pageRetours" text="Retours" />
                </children>
             </HBox>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
    </top>
    <center>
-      <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   		<content>
+     		<FlowPane fx:id="fp" alignment="TOP_CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
+        
+		         <padding>
+		            <Insets bottom="50.0" top="80.0" />
+		         </padding>
+		     </FlowPane>
+		   </content>
+		</ScrollPane>
    </center>
 </BorderPane>

@@ -1,14 +1,10 @@
 package controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LoginController extends MainController {
@@ -20,7 +16,7 @@ public class LoginController extends MainController {
 	private TextField mdpInput;
 	
 	@FXML
-	protected void loginBtnClick(ActionEvent e) {
+	protected void handleClickLogin(ActionEvent e) {
 		
 		
 		if(mdpInput.getText().equals("admin") && emailInput.getText().equals("admin")) {
@@ -28,6 +24,7 @@ public class LoginController extends MainController {
 		}else {
 			System.out.println("Erreur");
 		}
+		
 	}
 	
 	@Override
