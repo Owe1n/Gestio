@@ -1,4 +1,5 @@
-module menuTest {
+module Gestio {
+	requires java.sql;
 	requires javafx.controls;
 	requires javafx.fxml;
 	
