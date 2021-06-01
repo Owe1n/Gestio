@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Gestio" id="Project_1c55" database="Sqlite" >
+	<schema name="Default" >
+		<table name="demande" generator_rows="150" >
+			<column name="id_demande" prior="id_utilisateur" type="integer" jt="4" mandatory="y" />
+			<column name="id_materiel" type="integer" jt="4" />
+			<column name="id_utilisateur" type="integer" jt="4" />
+			<column name="quantity_bon" prior="quantity" type="integer" jt="4" >
+				<defo><![CDATA[1]]></defo>
+			</column>
+			<column name="quantity_moyen" type="integer" jt="4" />
+			<column name="quantite_mauvais" type="integer" jt="4" />
+			<index name="pk_demande" unique="PRIMARY_KEY" >
+				<column name="id_demande" />
+			</index>
+			<fk name="fk_demande_utilisateur" to_schema="Default" to_table="utilisateur" >
+				<fk_column name="id_utilisateur" pk="id_utilisateur" />
+			</fk>
+			<fk name="fk_demande_materiel" to_schema="Default" to_table="materiel" >
+				<fk_column name="id_materiel" pk="id_materiel" />
+			</fk>
+		</table>
+		<table name="materiel" generator_rows="100" >
+			<column name="id_materiel" type="integer" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="100" jt="12" mandatory="y" regexp="((Souris|Ecran|Clavier))" />
+			<column name="imgsSrc" type="varchar" length="100" jt="12" mandatory="y" regexp="((img/user/)(souris|clavier|ecran).png)" />
+			<column name="nbBon" type="bigint" jt="-5" mandatory="y" regexp="long:from=0;to=10;" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="nbMoyen" type="bigint" jt="-5" mandatory="y" regexp="long:from=0;to=10;" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="nbMauvais" type="bigint" jt="-5" mandatory="y" regexp="long:from=0;to=10;" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<index name="pk_materiel" unique="PRIMARY_KEY" >
+				<column name="id_materiel" />
+			</index>
+		</table>
+		<table name="utilisateur" generator_rows="100" >
+			<column name="id_utilisateur" type="integer" jt="4" mandatory="y" />
+			<column name="firstname" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="lastname" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="email" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="password" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="imgSrc" type="varchar" length="100" jt="12" mandatory="y" />
+			<column name="autorithyLevel" type="integer" jt="4" mandatory="y" regexp="int:from=0;to=2;" />
+			<index name="pk_utilisateur" unique="PRIMARY_KEY" >
+				<column name="id_utilisateur" />
+			</index>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.34.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="D:/Les projets/PROJETS/EN COURS/Gestio/Gestio/src/db/Gestio" />
+	<layout name="Default Layout" id="Layout_180a" show_relation="columns" >
+		<entity schema="Default" name="demande" color="C1D8EE" x="464" y="80" />
+		<entity schema="Default" name="materiel" color="C1EED8" x="848" y="48" />
+		<entity schema="Default" name="utilisateur" color="C1D8EE" x="48" y="48" />
+		<script name="SQL_Editor" id="Editor_cf5" language="SQL" >
+			<string><![CDATA[SELECT distinct d.id_utilisateur  
+FROM demande d
+]]></string>
+		</script>
+		<query id="Query_f81" name="Builder" groupby="y" >
+			<query_table schema="Default" name="demande" alias="d" x="768" y="208" >
+				<column name="id_demande" />
+				<column name="quantity_bon" />
+			</query_table>
+		</query>
+		<query id="Query_283" name="Builder_001" groupby="y" >
+			<query_table schema="Default" name="demande" alias="d" x="48" y="96" >
+				<column name="quantity_bon" />
+				<column name="quantity_moyen" />
+				<column name="quantite_mauvais" />
+				<query_table schema="Default" name="utilisateur" alias="u" x="400" y="48" fk="fk_demande_utilisateur" type="Inner Join" >
+					<column name="firstname" />
+					<column name="lastname" />
+				</query_table>
+				<query_table schema="Default" name="materiel" alias="m" x="400" y="224" fk="fk_demande_materiel" type="Inner Join" >
+					<column name="name" />
+					<column name="imgsSrc" />
+				</query_table>
+			</query_table>
+		</query>
+	</layout>
+</project>

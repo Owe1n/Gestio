@@ -17,7 +17,9 @@ public class Utilisateur {
 		this.imageUserPath = imageUserPath;
 		this.autorithyLevel = autorithyLevel;
 	}
+	public Utilisateur(){
 	
+	}
 	
 	public String getFirstName() {
 		return firstName;

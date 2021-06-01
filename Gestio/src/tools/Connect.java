@@ -13,14 +13,14 @@ public class Connect {
      /**
      * Connect to a sample database
      */
-	private String url;
+	protected String url;
 	
 	public Connection conn;
 	
 	public Connect(String name_of_db){
 		conn = null;
         String localDir = System.getProperty("user.dir");
-        System.out.println(localDir);
+       
         this.url = "jdbc:sqlite:" + localDir + "\\src\\db\\"+ name_of_db +".db";
         try {
             conn = DriverManager.getConnection(this.url);  
@@ -37,16 +37,12 @@ public class Connect {
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             
-            // loop through the result set
-            while (rs.next()) {
-                System.out.println(rs.getString("id_utilisateur") +  "\t" + 
-                                   rs.getString("nom_utilisateur") + "\t" +
-                                   rs.getString("email"));
-            }
+           
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
+ 
     public  void createNewTable(String name, ArrayList<String> fields,  ArrayList<String> types, ArrayList<String> specs) {
                
         // SQL statement for creating a new table
@@ -99,6 +95,8 @@ public class Connect {
             System.out.println(e.getMessage());
         }
     }
+    
+    
 
     
 

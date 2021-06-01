@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import model.DemandesModel;
 public class MainController implements Initializable {
 	
 	
@@ -42,35 +43,15 @@ public class MainController implements Initializable {
 		
 			fp.getChildren().clear();
 		
-			/*@TODO, changer ca en BDD*/
 			
-			
-			Materiel mat1 = new Materiel("souris", "/img/Sourris.jpg", 21, 23, 7);
-			Materiel mat2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
-			
-			
-			Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/Ecran.jpg", 1);
-			Utilisateur monUtilisateur2 = new Utilisateur("aeaeazeazeaze", "aeaeaze", "email@eazeazeazeazemail.com", "12345password", "/img/Clavier.jpg", 1);
-			
-			Demande monModelDemande = new Demande(monUtilisateur, 0);
-			
-			monModelDemande.addMateriel(mat1, 5);
-			monModelDemande.addMateriel(mat2, 10);
-			
-			Demande monModelDemande2 = new Demande(monUtilisateur2, 0);
-			monModelDemande2.addMateriel(mat1, 65);
-
-			
-			DemandeCardController first = new DemandeCardController(monModelDemande);
-			DemandeCardController second = new DemandeCardController(monModelDemande2);
-			/*@TODO, changer ca en BDD*/
+			DemandesModel demandeModel = new DemandesModel("Gestio");			
+			for(Demande d: demandeModel.demandes) {
+				fp.getChildren().add(new DemandeCardController(d).build());
+			}
 		
-			fp.getChildren().add(first.build());
-			
-			fp.getChildren().add(second.build());
 			
 			
-		
+			
 		
 		
 	}

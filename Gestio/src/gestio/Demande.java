@@ -14,6 +14,7 @@ public class Demande {
 		this.typeDemande = typeDemande;
 		this.materiels = new HashMap<Materiel, Integer>();
 	}
+	public Demande() {};
 
 	public Utilisateur getUser() {
 		return user;
