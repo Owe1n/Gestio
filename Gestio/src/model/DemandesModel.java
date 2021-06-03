@@ -60,7 +60,7 @@ public class DemandesModel extends Connect {
 		for (Integer i : ids) {
 			Demande demande = new Demande();
 			demande.setUser(userModel.getUtilisateurById(i));
-			HashMap<Materiel, Integer> materiels = new HashMap<Materiel, Integer>();
+			HashMap<Materiel, ArrayList<Integer>> materiels = new HashMap<Materiel, ArrayList<Integer>>();
 			String sql2 = "SELECT * \r\n"
     				+ "FROM demande d\r\n"
     				+ "	INNER JOIN utilisateur u ON ( d.id_utilisateur = u.id_utilisateur  )  \r\n"
@@ -72,10 +72,16 @@ public class DemandesModel extends Connect {
     			{	
     				
     				int id_materiel = rs2.getInt("id_materiel");
-    				int quantity_materiel =  rs2.getInt("quantity_bon");
+    				int quantity_bon =  rs2.getInt("quantity_bon");
+    				int quantity_moyen =  rs2.getInt("quantity_moyen");
+    				int quantity_mauvais =  rs2.getInt("quantity_mauvais");
+    				ArrayList<Integer> quantities_materiel = new ArrayList<Integer>();
+    				quantities_materiel.add(quantity_bon);
+    				quantities_materiel.add(quantity_moyen);
+    				quantities_materiel.add(quantity_mauvais);
     				
     				Materiel materiel = materielModel.getMaterielById(id_materiel);
-    				materiels.put(materiel, quantity_materiel);
+    				materiels.put(materiel, quantities_materiel);
     			}
     	    }catch (SQLException e) {
                 System.out.println(e.getMessage());

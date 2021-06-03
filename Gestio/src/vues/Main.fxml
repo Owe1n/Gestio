@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="400.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <top>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topnav" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="80.0" prefWidth="200.0" styleClass="topnav" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#pageMateriel" text="Matériel" />
-                  <Button mnemonicParsing="false" onMouseClicked="#pageUtilisateurs" text="Utilisateurs" />
-                  <Button mnemonicParsing="false" onMouseClicked="#pageDemandes" text="Demandes" />
-                  <Button mnemonicParsing="false" onMouseClicked="#pageRetours" text="Retours" />
+                  <ImageView fitHeight="31.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logoNav.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label style="-fx-text-fill: white;" text="utilisateur277">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Label>
+                  <ImageView fitHeight="58.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/user2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="75.0" prefHeight="80.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="materielBtn" mnemonicParsing="false" onMouseClicked="#pageMateriel" prefHeight="80.0" prefWidth="95.0" styleClass="menuButton" text="Matériel">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+                  <Button fx:id="utilisateurBtn" mnemonicParsing="false" onMouseClicked="#pageUtilisateurs" prefHeight="80.0" prefWidth="120.0" styleClass="menuButton" text="Utilisateurs" />
+                  <Button fx:id="demandesBtn" mnemonicParsing="false" onMouseClicked="#pageDemandes" prefHeight="80.0" prefWidth="113.0" styleClass="menuButton" text="Retours" />
                </children>
             </HBox>
          </children>
@@ -34,7 +53,7 @@
    <center>
       <ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    		<content>
-     		<FlowPane fx:id="fp" alignment="TOP_CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
+     		<FlowPane fx:id="fp" alignment="CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
         
 		         <padding>
 		            <Insets bottom="50.0" top="80.0" />

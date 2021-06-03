@@ -1,7 +1,4 @@
 * {
-	/*Il faut remplacer la couleur par la variable exemple :-fx-alignment: 
-	 * -fx-background-color: -fx-orange;
-	 * */
    -fx-blue: #2196f3;
    -fx-blue-hover: #1d87ce;
    -fx-blue-cliked: #1b7aaf;
@@ -42,6 +39,8 @@
 	-fx-font-weight: 600;
 	-fx-font-size: 18px;
 	-fx-font-weight: bold;
+	-fx-border-style: hidden hidden hidden hidden;
+	-fx-border-width: 0;
 }
 
 .button:hover{
@@ -95,6 +94,28 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
 	-fx-background-color: -fx-blue;
 }
+
+.menuButton{
+	-fx-background-radius: 0;
+	-fx-min-height: 78px;
+	-fx-max-height: 78px;
+}
+
+.selectedBtn{
+	-fx-background-color: #ffffff;
+	-fx-text-fill: -fx-blue;
+	-fx-border-style: hidden hidden hidden hidden;
+	-fx-border-width: 0;
+	-fx-min-height: 80px;
+	-fx-max-height: 80px;
+}
+
+.selectedBtn:hover{
+	-fx-background-color: #ffffff;
+	-fx-text-fill: -fx-blue;
+}
+
+
 /*MENU END */
 
 /*Demandes START */
@@ -143,3 +164,68 @@
 	-fx-background-color: #ffffff;
 }
 /*Demandes END */
+
+/*Utilisateur START */
+.utilisateurCard{
+	-fx-max-width: 250px;
+	-fx-min-width: 250px;
+	-fx-max-height: 300px;
+	-fx-min-height: 300px;
+	
+	-fx-pref-width: 100%;
+	-fx-pref-height: 100%;
+	-fx-background-radius: 20;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
+	-fx-background-color: #ffffff;
+}
+
+.cardTitle{
+	-fx-font-family: 'Lato-Regular';
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+}
+/*Utilisateur END */
+
+/*Materiel Admin START */
+.materielAdminCard{
+	-fx-max-width: 500px;
+	-fx-min-width: 500px;
+	-fx-max-height: 300px;
+	-fx-min-height: 300px;
+	
+	-fx-pref-width: 100%;
+	-fx-pref-height: 100%;
+	-fx-background-radius: 20;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
+	-fx-background-color: #ffffff;
+}
+
+.titleMaterielAdminCard{
+	-fx-font-family: 'Lato-Regular';
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+}
+
+.quantiteMaterielAdminCard{
+	-fx-font-family: 'Lato-Regular';
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+
+.anchorClip{
+	-fx-max-width: 75px;
+	-fx-min-width: 75px;
+	-fx-max-height: 75px;
+	-fx-min-height: 75px;
+	-fx-background-radius: 20;
+	-fx-background-color: #ffff00;
+	
+	/*-fx-background-image: url("../img/Ecran.jpg");
+	-fx-background-position: center, center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-alignment: center;*/
+	
+}
+/*Materiel Admin START */

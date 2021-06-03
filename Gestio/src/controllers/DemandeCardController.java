@@ -15,13 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class DemandeCardController implements Initializable {
@@ -44,7 +43,7 @@ public class DemandeCardController implements Initializable {
 	@FXML
 	private ImageView userImgView;
 	
-	private HashMap<Materiel, Integer> listMateriels;
+	private HashMap<Materiel, ArrayList<Integer>> listMateriels;
 	
 	
 	public AnchorPane build() {
@@ -70,40 +69,43 @@ public class DemandeCardController implements Initializable {
 
 	@FXML
 	public void handleClickValider(ActionEvent e) {
-		System.out.println("Validé");
+		System.out.println("Validï¿½");
 		
 	}
 
 	
 	@FXML
-	public void handleClickRefuser(ActionEvent e) {
-		System.out.println("Refusé");
+	public void handleClickRefuser(MouseEvent e) {
+		System.out.println("Refusï¿½");
 	}
 	
 
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
 		demandeName.setText(this.demandeModel.getUser().getFirstName());
 		demandeEmail.setText(this.demandeModel.getUser().getEmail());
 		
 		demandeName.setPadding(new Insets(0, 0, 0, 15)); 
 		demandeEmail.setPadding(new Insets(0, 0, 0, 15)); 
+		System.out.println("Bitasse");
 		
 		Image userImg = new Image(getClass().getResourceAsStream(this.demandeModel.getUser().getImageUserPath()));
-		
+	
 		userImgView.setImage(userImg);
 		
 		listMateriels = this.demandeModel.getMateriels();
 		
-		for(Map.Entry<Materiel, Integer> item : this.listMateriels.entrySet()) {
+		
+		for (Map.Entry<Materiel, ArrayList<Integer>> item : listMateriels.entrySet()) {
 			VBox matItem = new VBox(); 
 			
 			matItem.setSpacing(-10);
 			matItem.setPadding(new Insets(10, 10, 10, 10)); 
 			matItem.setAlignment(Pos.BASELINE_CENTER);
 			
-			/*@TODO, modifier ça par une img*/
+			/*@TODO, modifier ï¿½a par une img*/
 			Image matImg = new Image(getClass().getResourceAsStream(item.getKey().getImagePath()));
 			ImageView matImgView = new ImageView();
 			matImgView.setImage(matImg);
@@ -111,7 +113,13 @@ public class DemandeCardController implements Initializable {
 			matImgView.setPreserveRatio(true);
 		
 			Label matQuantite = new Label();	
-			matQuantite.setText(String.valueOf(item.getValue()));
+			
+			Integer quant = 0;
+			for(int i = 0; i < item.getValue().size(); i++) {
+				quant+= item.getValue().get(i);
+			}
+			
+			matQuantite.setText(String.valueOf(quant));
 			matQuantite.getStyleClass().add("demandeCount");
 			
 			matItem.getChildren().add(matImgView);

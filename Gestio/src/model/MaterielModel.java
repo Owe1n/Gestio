@@ -33,6 +33,7 @@ public class MaterielModel extends Connect  {
             while (rs.next()) {
            
                 Materiel materiel = new Materiel(rs.getString("name"), rs.getString("imgSrc"), rs.getInt("nbBon"), rs.getInt("nbMoyen"), rs.getInt("nbMauvais"));
+            
                 materielTemp.add(materiel);
                 
             }

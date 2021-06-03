@@ -20,6 +20,10 @@ public class Utilisateur {
 	public Utilisateur(){
 	
 	}
+
+	public String getFullName() {
+		return getFirstName() + " " + getLastName();
+	}
 	
 	public String getFirstName() {
 		return firstName;
