@@ -58,7 +58,7 @@
                                     <Image url="@../img/minusButton.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="countBon" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
+                              <Label fx:id="labelBon" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
                               <ImageView fitHeight="150.0" fitWidth="20.0" onMouseClicked="#handleAddBonMateriel" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                                  <image>
                                     <Image url="@../img/addButton.png" />
@@ -85,7 +85,7 @@
                                     <Image url="@../img/minusButton.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="countMoyen" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
+                              <Label fx:id="labelMoyen" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
                               <ImageView fitHeight="150.0" fitWidth="20.0" onMouseClicked="#handleAddMoyenMateriel" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                                  <image>
                                     <Image url="@../img/addButton.png" />
@@ -118,7 +118,7 @@
                                     <Image url="@../img/minusButton.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="countMauvais" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
+                              <Label fx:id="labelMauvais" alignment="CENTER" prefHeight="27.0" prefWidth="92.0" styleClass="quantiteMaterielAdminCard" text="0" />
                               <ImageView fitHeight="150.0" fitWidth="20.0" onMouseClicked="#handleAddMauvaisMateriel" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                                  <image>
                                     <Image url="@../img/addButton.png" />

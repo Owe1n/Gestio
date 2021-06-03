@@ -30,13 +30,17 @@ public class MaterielAdminCardController implements Initializable {
 	private Label nameMat;
 	
 	@FXML
-	private Label countBon;
+	private Label labelBon;
 
 	@FXML
-	private Label countMoyen;
+	private Label labelMoyen;
 
 	@FXML
-	private Label countMauvais;
+	private Label labelMauvais;
+	
+	private Integer counterBon;
+	private Integer counterMoyen;
+	private Integer counterMauvais;
 	
 	/*@FXML
 	private ImageView materielImageView;*/
@@ -53,32 +57,38 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleAddBonMateriel(MouseEvent e){
-		System.out.println("bon +");
+		labelBon.setText(String.valueOf(counterBon++));
+		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleAddMoyenMateriel(MouseEvent e){
-		System.out.println("moyen +");
+		labelMoyen.setText(String.valueOf(counterMoyen++));
+		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleAddMauvaisMateriel(MouseEvent e){
-		System.out.println("mauvais +");
+		labelMauvais.setText(String.valueOf(counterMauvais++));
+		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveBonMateriel(MouseEvent e){
-		System.out.println("bon -");
+		labelBon.setText(String.valueOf(counterBon--));
+		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveMoyenMateriel(MouseEvent e){
-		System.out.println("moyen -");
+		labelMoyen.setText(String.valueOf(counterMoyen--));
+		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveMauvaisMateriel(MouseEvent e){
-		System.out.println("mauvais -");
+		labelMauvais.setText(String.valueOf(counterMauvais--));
+		//@TODO requete BDD
 	}
 	
 	public AnchorPane build() {
@@ -105,9 +115,9 @@ public class MaterielAdminCardController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		nameMat.setText(this.materielModel.getName());
-		countBon.setText(String.valueOf(this.materielModel.getNbBon()));
-		countMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
-		countMauvais.setText(String.valueOf(this.materielModel.getNbMauvais()));
+		labelBon.setText(String.valueOf(this.materielModel.getNbBon()));
+		labelMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
+		labelMauvais.setText(String.valueOf(this.materielModel.getNbMauvais()));
 		
 		
 		Image materielImg = new Image(getClass().getResourceAsStream(this.materielModel.getImagePath()));
@@ -116,6 +126,10 @@ public class MaterielAdminCardController implements Initializable {
 		ImagePattern pattern = new ImagePattern(materielImg);
 		imgContainer.setFill(pattern);
 				
+		
+		counterBon = this.materielModel.getNbBon();
+		counterMoyen = this.materielModel.getNbMoyen();
+		counterMauvais = this.materielModel.getNbMauvais();
 	}
 
 }
