@@ -69,14 +69,14 @@ public class DemandeCardController implements Initializable {
 
 	@FXML
 	public void handleClickValider(ActionEvent e) {
-		System.out.println("Valid�");
+		System.out.println("Valide");
 		
 	}
 
 	
 	@FXML
 	public void handleClickRefuser(MouseEvent e) {
-		System.out.println("Refus�");
+		System.out.println("Refuse");
 	}
 	
 
@@ -89,7 +89,6 @@ public class DemandeCardController implements Initializable {
 		
 		demandeName.setPadding(new Insets(0, 0, 0, 15)); 
 		demandeEmail.setPadding(new Insets(0, 0, 0, 15)); 
-		System.out.println("Bitasse");
 		
 		Image userImg = new Image(getClass().getResourceAsStream(this.demandeModel.getUser().getImageUserPath()));
 	

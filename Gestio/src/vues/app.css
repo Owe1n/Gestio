@@ -84,7 +84,10 @@
    -fx-background-color: transparent;
 }
 
-
+.titlePage{
+	-fx-font-size: 32px;
+	-fx-font-weight: bold;
+}
 
 /*topnav START */
 .topnav{

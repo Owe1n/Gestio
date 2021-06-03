@@ -89,11 +89,6 @@ public class MainController implements Initializable {
 				fp.getChildren().add(new DemandeCardController(d).build());
 			}
 		
-			
-			
-			
-		
-		
 	}
 	
 	@FXML
@@ -104,6 +99,20 @@ public class MainController implements Initializable {
 	@FXML
 	private void pageLogin(MouseEvent event) {
 		loadPage("/vues/Login");
+	}
+	
+	private void addUtilisateur() {
+		fp.getChildren().clear();
+		
+		//AddUtilisateurController addUser = new AddUtilisateurController("Owein", "Gourneau", "o.g@gmail.com", "123","/img/user1.png");
+		Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User1.png", 1);
+		AddUtilisateurController addUser = new AddUtilisateurController(monUtilisateur);
+		AddUtilisateurController addUser2 = new AddUtilisateurController();
+		//addUser = Si on doit modifier un user
+		//addUser = Si on doit ajouter un tout nouveau user
+		
+		fp.getChildren().add(addUser2.build());
+		
 	}
 	
 	private void loadPage(String page) {
@@ -120,10 +129,14 @@ public class MainController implements Initializable {
 		fp.getChildren().add(root);
 		
 	}
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		// @Todo ajouter le lancement de la page materiel quand le controlleur sera fait
+		//loadPage("/vues/AddUtilisateur");
+		addUtilisateur();
+
 		
 	}
 	private void resetStyleNavBtn(){
