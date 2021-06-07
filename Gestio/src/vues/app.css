@@ -21,8 +21,8 @@
 	-fx-max-width: 550px;
 	-fx-max-height: 450px;
 	-fx-min-height: 350px;
-	-fx-pref-width: 100%;
-	-fx-pref-height: 100%;
+	-fx-pref-width: 550px;
+	-fx-pref-height: 350px;
 	-fx-background-radius: 20;
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 25, 0, 0, 0);
 	-fx-background-color: #ffffff;

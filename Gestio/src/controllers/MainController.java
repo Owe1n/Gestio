@@ -9,11 +9,15 @@ import java.util.ResourceBundle;
 import gestio.Demande;
 import gestio.Materiel;
 import gestio.Utilisateur;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -35,6 +39,35 @@ public class MainController implements Initializable {
 	@FXML
 	private Button demandesBtn;
 
+	@FXML
+	private TextField emailInput;
+	
+	@FXML
+	private Label userName;
+	
+	@FXML
+	private ImageView userImgView;
+	
+	/*LOGIN MAIN*/
+	@FXML
+	private TextField mdpInput;
+	
+	@FXML
+	protected void handleClickLoginMain(ActionEvent e) {
+		
+		
+		if(mdpInput.getText().equals("admin") && emailInput.getText().equals("admin")) {
+			System.out.println("Connecté Admin caca!!");
+			launchAppAdmin("admin1");
+			
+		}else if(mdpInput.getText().equals("user") && emailInput.getText().equals("user")) {
+			System.out.println("Connecté user");
+		}else {
+			System.out.println("Erreur");
+		}
+		
+	}
+	/*LOGIN MAIN*/
 	
 	@FXML
 	private void pageMateriel(MouseEvent event) {
@@ -107,15 +140,30 @@ public class MainController implements Initializable {
 		//AddUtilisateurController addUser = new AddUtilisateurController("Owein", "Gourneau", "o.g@gmail.com", "123","/img/user1.png");
 		Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User1.png", 1);
 		AddUtilisateurController addUser = new AddUtilisateurController(monUtilisateur);
-		AddUtilisateurController addUser2 = new AddUtilisateurController();
 		//addUser = Si on doit modifier un user
 		//addUser = Si on doit ajouter un tout nouveau user
 		
-		fp.getChildren().add(addUser2.build());
+		fp.getChildren().add(new AddUtilisateurController().build());
 		
 	}
 	
+	private void launchAppAdmin(String userName) {
+		enableBtnNav();
+		//this.userName.setText(userName);
+		resetStyleNavBtn();
+		demandesBtn.getStyleClass().add("selectedBtn");
+	
+		fp.getChildren().clear();
+	
+		
+		DemandesModel demandeModel = new DemandesModel("Gestio");			
+		for(Demande d: demandeModel.demandes) {
+			fp.getChildren().add(new DemandeCardController(d).build());
+		}
+	}
+	
 	private void loadPage(String page) {
+		
 		fp.getChildren().clear();
 		
 		Parent root = null;
@@ -134,15 +182,37 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// @Todo ajouter le lancement de la page materiel quand le controlleur sera fait
-		//loadPage("/vues/AddUtilisateur");
-		addUtilisateur();
+		disableBtnNav();
+		//addUtilisateur();
 
-		
 	}
+	
+	
 	private void resetStyleNavBtn(){
 		materielBtn.getStyleClass().remove("selectedBtn");
 		utilisateurBtn.getStyleClass().remove("selectedBtn");
 		demandesBtn.getStyleClass().remove("selectedBtn");
 		//retourslBtn.getStyleClass().remove("selectedBtn");
 	}
+	
+	private void disableBtnNav(){
+		materielBtn.setDisable(true);
+		utilisateurBtn.setDisable(true);
+		demandesBtn.setDisable(true);
+		
+		materielBtn.setVisible(false);
+		utilisateurBtn.setVisible(false);
+		demandesBtn.setVisible(false);
+	}
+	
+	private void enableBtnNav(){
+		materielBtn.setDisable(false);
+		utilisateurBtn.setDisable(false);
+		demandesBtn.setDisable(false);
+		
+		materielBtn.setVisible(true);
+		utilisateurBtn.setVisible(true);
+		demandesBtn.setVisible(true);
+	}
+	
 }

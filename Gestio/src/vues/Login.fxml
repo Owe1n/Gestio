@@ -4,79 +4,66 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane prefHeight="350.0" prefWidth="433.0" styleClass="basicPane" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" stylesheets="@app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="80.0" prefWidth="200.0" styleClass="topnav" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="basicPane" VBox.vgrow="ALWAYS">
+            <HBox prefHeight="0.0" prefWidth="450.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <HBox prefHeight="0.0" prefWidth="450.0">
-                           <children>
-                              <Label alignment="CENTER" text="Adresse email">
-                                 <font>
-                                    <Font name="Lato Semibold" size="16.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                           <VBox.margin>
-                              <Insets left="100.0" right="100.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <TextField fx:id="emailInput">
-                           <VBox.margin>
-                              <Insets bottom="30.0" left="100.0" right="100.0" top="3.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <HBox prefHeight="0.0" prefWidth="650.0">
-                           <children>
-                              <Label text="Mot de passe">
-                                 <font>
-                                    <Font name="Lato Semibold" size="16.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <VBox.margin>
-                              <Insets left="100.0" right="100.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <PasswordField fx:id="mdpInput">
-                           <VBox.margin>
-                              <Insets bottom="30.0" left="100.0" right="100.0" />
-                           </VBox.margin>
-                        </PasswordField>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="450.0">
-                           <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleClickLogin" prefHeight="35.0" prefWidth="150.0" text="Se connecter">
-                                 <font>
-                                    <Font name="Lato Black" size="12.0" />
-                                 </font></Button>
-                           </children>
-                           <VBox.margin>
-                              <Insets left="100.0" right="100.0" />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <Label alignment="CENTER" text="Adresse email">
+                     <font>
+                        <Font name="Lato Semibold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
                </children>
-            </AnchorPane>
-            <Separator orientation="VERTICAL" prefHeight="200.0" visible="false" />
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </HBox>
+            <TextField fx:id="emailInput">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="100.0" right="100.0" top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="0.0" prefWidth="650.0">
+               <children>
+                  <Label text="Mot de passe">
+                     <font>
+                        <Font name="Lato Semibold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </HBox>
+            <PasswordField fx:id="mdpInput">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="100.0" right="100.0" />
+               </VBox.margin>
+            </PasswordField>
+            <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="450.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleClickLogin" prefHeight="35.0" prefWidth="150.0" text="Se connecter">
+                     <font>
+                        <Font name="Lato Black" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </HBox>
          </children>
       </VBox>
-
    </children>
 </AnchorPane>
