@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import model.DemandesModel;
 public class MainController implements Initializable {
 	
@@ -48,6 +49,9 @@ public class MainController implements Initializable {
 	@FXML
 	private ImageView userImgView;
 	
+	@FXML
+	private HBox disconected;
+	
 	/*LOGIN MAIN*/
 	@FXML
 	private TextField mdpInput;
@@ -57,7 +61,7 @@ public class MainController implements Initializable {
 		
 		
 		if(mdpInput.getText().equals("admin") && emailInput.getText().equals("admin")) {
-			System.out.println("Connecté Admin caca!!");
+			System.out.println("Connecté Admin !!");
 			launchAppAdmin("admin1");
 			
 		}else if(mdpInput.getText().equals("user") && emailInput.getText().equals("user")) {
@@ -67,6 +71,7 @@ public class MainController implements Initializable {
 		}
 		
 	}
+	
 	/*LOGIN MAIN*/
 	
 	@FXML
@@ -149,7 +154,8 @@ public class MainController implements Initializable {
 	
 	private void launchAppAdmin(String userName) {
 		enableBtnNav();
-		//this.userName.setText(userName);
+		this.userName.setText(userName);
+		
 		resetStyleNavBtn();
 		demandesBtn.getStyleClass().add("selectedBtn");
 	
@@ -199,20 +205,24 @@ public class MainController implements Initializable {
 		materielBtn.setDisable(true);
 		utilisateurBtn.setDisable(true);
 		demandesBtn.setDisable(true);
+		disconected.setDisable(true);
 		
 		materielBtn.setVisible(false);
 		utilisateurBtn.setVisible(false);
 		demandesBtn.setVisible(false);
+		disconected.setVisible(false);
 	}
 	
 	private void enableBtnNav(){
 		materielBtn.setDisable(false);
 		utilisateurBtn.setDisable(false);
 		demandesBtn.setDisable(false);
+		disconected.setDisable(false);
 		
 		materielBtn.setVisible(true);
 		utilisateurBtn.setVisible(true);
 		demandesBtn.setVisible(true);
+		disconected.setVisible(true);
 	}
 	
 }
