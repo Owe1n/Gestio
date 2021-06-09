@@ -186,9 +186,9 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		disableBtnNav();
-		//loadPageLogin("/vues/Login");
+		loadPageLogin("/vues/Login");
 
-		addUtilisateur();
+		//addUtilisateur();
 
 	}
 	
