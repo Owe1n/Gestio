@@ -57,7 +57,7 @@ public class MainController implements Initializable {
 	private void handleDisconected(MouseEvent e) {
 		disableBtnNav();
 
-		loadPageLogin("/vues/Login");
+		//loadPageLogin("/vues/Login");
 	}	
 	
 	@FXML
@@ -152,6 +152,13 @@ public class MainController implements Initializable {
 		
 	}
 	
+	public void addMateriel() {
+		fp.getChildren().clear();
+		
+		fp.getChildren().add(new AddMaterielController().build());
+		
+	}
+	
 	public void launchAppUser(Utilisateur user) {
 		eneableDisconected();
 		this.userName.setText(user.getFullName());
@@ -234,8 +241,11 @@ public class MainController implements Initializable {
 		disableBtnNav();
 
 		loadPageLogin("/vues/Login");
+		
+		//AddMaterielController addMatC = new AddMaterielController();
+		
+		//fp.getChildren().add(addMatC.build());
 
-		//addUtilisateur();
 
 	}
 	
