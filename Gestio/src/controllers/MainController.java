@@ -91,11 +91,14 @@ public class MainController implements Initializable {
 		
 		/*@TODO, changer ca en BDD*/
 		Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User1.png", 1);
-		Utilisateur monUtilisateur2 = new Utilisateur("aeaeazeazeaze", "aeaeaze", "email@eazeazeazeazemail.com", "12345password", "/img/User1.png", 1);
+		Utilisateur monUtilisateur2 = new Utilisateur("aeaeazeazeaze", "aeaeaze", "email@eazeazeazeazemail.com", "12345password", "/img/User1.png", 0);
 		
 		UtilisateurCardController user1 = new UtilisateurCardController(monUtilisateur);
 		UtilisateurCardController user2 = new UtilisateurCardController(monUtilisateur2);
 		/*@TODO, changer ca en BDD*/
+		
+		user1.setParent(this);
+		user2.setParent(this);
 		
 		fp.getChildren().add(user1.build());
 		fp.getChildren().add(user2.build());
@@ -127,7 +130,7 @@ public class MainController implements Initializable {
 		loadPage("/vues/Login");
 	}
 	
-	private void addUtilisateur() {
+	public void addUtilisateur() {
 		fp.getChildren().clear();
 		
 		//AddUtilisateurController addUser = new AddUtilisateurController("Owein", "Gourneau", "o.g@gmail.com", "123","/img/user1.png");
@@ -137,6 +140,15 @@ public class MainController implements Initializable {
 		//addUser = Si on doit ajouter un tout nouveau user
 		
 		fp.getChildren().add(new AddUtilisateurController().build());
+		
+	}
+	
+	public void editUtilisateur(Utilisateur user) {
+		fp.getChildren().clear();
+
+		AddUtilisateurController editUser = new AddUtilisateurController(user);
+		
+		fp.getChildren().add(editUser.build());
 		
 	}
 	

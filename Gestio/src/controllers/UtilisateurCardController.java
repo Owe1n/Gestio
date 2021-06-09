@@ -22,6 +22,12 @@ public class UtilisateurCardController implements Initializable {
 		this.utilisateurModel = utilisateurModel;
 	}
 	
+	private MainController parent;
+	
+	public void setParent(MainController parent) {
+		this.parent = parent;
+	}
+	
 	@FXML
 	private Label nameUserCard;
 	
@@ -41,7 +47,7 @@ public class UtilisateurCardController implements Initializable {
 	
 	@FXML
 	public void handleClickEdit(MouseEvent e) {
-		System.out.println("Profil Edité");
+		parent.editUtilisateur(utilisateurModel);
 	}
 	
 	public AnchorPane build() {

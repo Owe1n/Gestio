@@ -50,6 +50,7 @@ public class MaterielUserCardController implements Initializable {
 		
 		if(counterQuantite > this.materielModel.getTotalItem()){
 			counterQuantite = this.materielModel.getTotalItem();
+			labelQuantite.setText(String.valueOf(counterQuantite));
 		}
 		
 		//@TODO requete BDD
@@ -61,6 +62,7 @@ public class MaterielUserCardController implements Initializable {
 		
 		if(counterQuantite < 0) {
 			counterQuantite = 0;
+			labelQuantite.setText(String.valueOf(counterQuantite));
 		}
 		
 		//@TODO requete BDD
