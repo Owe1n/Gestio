@@ -52,27 +52,7 @@ public class MainController implements Initializable {
 	@FXML
 	private HBox disconected;
 	
-	/*LOGIN MAIN*/
-	@FXML
-	private TextField mdpInput;
 	
-	@FXML
-	protected void handleClickLoginMain(ActionEvent e) {
-		
-		
-		if(mdpInput.getText().equals("admin") && emailInput.getText().equals("admin")) {
-			System.out.println("Connecté Admin !!");
-			launchAppAdmin("admin1");
-			
-		}else if(mdpInput.getText().equals("user") && emailInput.getText().equals("user")) {
-			System.out.println("Connecté user");
-		}else {
-			System.out.println("Erreur");
-		}
-		
-	}
-	
-	/*LOGIN MAIN*/
 	
 	@FXML
 	private void pageMateriel(MouseEvent event) {
@@ -152,7 +132,7 @@ public class MainController implements Initializable {
 		
 	}
 	
-	private void launchAppAdmin(String userName) {
+	public void launchAppAdmin(String userName) {
 		enableBtnNav();
 		this.userName.setText(userName);
 		
@@ -185,15 +165,34 @@ public class MainController implements Initializable {
 	}
 	
 
+	private void loadPageLogin(String page) {
+		fp.getChildren().clear();
+		
+		Parent root = null;
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(page+".fxml"));
+			root = (Parent)fxmlLoader.load();
+			LoginController loginController = fxmlLoader.<LoginController>getController();
+			loginController.setParent(this);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		fp.getChildren().add(root);
+	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// @Todo ajouter le lancement de la page materiel quand le controlleur sera fait
 		disableBtnNav();
-		//addUtilisateur();
+		//loadPageLogin("/vues/Login");
+
+		addUtilisateur();
 
 	}
 	
-	
+
 	private void resetStyleNavBtn(){
 		materielBtn.getStyleClass().remove("selectedBtn");
 		utilisateurBtn.getStyleClass().remove("selectedBtn");
