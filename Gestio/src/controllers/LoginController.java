@@ -4,15 +4,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import gestio.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class LoginController extends MainController {
+public class LoginController implements Initializable {
 
 	
 	@FXML
@@ -32,10 +34,13 @@ public class LoginController extends MainController {
 		
 		if(mdpInput.getText().equals("admin") && emailInput.getText().equals("admin")) {
 			System.out.println("Connecté Admin !!");
-			parent.launchAppAdmin("admin1");
+			Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User2.png", 1);
+			parent.launchAppAdmin(monUtilisateur);
 			
 		}else if(mdpInput.getText().equals("user") && emailInput.getText().equals("user")) {
 			System.out.println("Connecté user");
+			Utilisateur monUtilisateur = new Utilisateur("Owein", "GGGGourneau", "email@email.com", "12345password", "/img/User1.png", 1);
+			parent.launchAppUser(monUtilisateur);
 		}else {
 			System.out.println("Erreur");
 		}

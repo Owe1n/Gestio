@@ -38,68 +38,45 @@ public class MaterielUserCardController implements Initializable {
 	@FXML
 	private Label labelMauvais;
 	
-	private Integer counterBon;
-	private Integer counterMoyen;
-	private Integer counterMauvais;
+	@FXML
+	private Label labelQuantite;
 	
-	/*@FXML
-	private ImageView materielImageView;*/
+	private Integer counterQuantite;
 	
 	@FXML
-	private void handleDeleteMateriel(MouseEvent e){
-		System.out.println("Delete");
-	}
-	
-	@FXML
-	private void handleEditMateriel(MouseEvent e){
-		System.out.println("Edit");
-	}
-	
-	@FXML
-	private void handleAddBonMateriel(MouseEvent e){
-		labelBon.setText(String.valueOf(counterBon++));
+	private void handleAddQuantite(MouseEvent e){
+		
+		labelQuantite.setText(String.valueOf(++counterQuantite));
+		
+		if(counterQuantite > this.materielModel.getTotalItem()){
+			counterQuantite = this.materielModel.getTotalItem();
+		}
+		
 		//@TODO requete BDD
 	}
 	
 	@FXML
-	private void handleAddMoyenMateriel(MouseEvent e){
-		labelMoyen.setText(String.valueOf(counterMoyen++));
+	private void handleRemoveQuantite(MouseEvent e){
+		labelQuantite.setText(String.valueOf(--counterQuantite));
+		
+		if(counterQuantite < 0) {
+			counterQuantite = 0;
+		}
+		
 		//@TODO requete BDD
 	}
 	
-	@FXML
-	private void handleAddMauvaisMateriel(MouseEvent e){
-		labelMauvais.setText(String.valueOf(counterMauvais++));
-		//@TODO requete BDD
-	}
-	
-	@FXML
-	private void handleRemoveBonMateriel(MouseEvent e){
-		labelBon.setText(String.valueOf(counterBon--));
-		//@TODO requete BDD
-	}
-	
-	@FXML
-	private void handleRemoveMoyenMateriel(MouseEvent e){
-		labelMoyen.setText(String.valueOf(counterMoyen--));
-		//@TODO requete BDD
-	}
-	
-	@FXML
-	private void handleRemoveMauvaisMateriel(MouseEvent e){
-		labelMauvais.setText(String.valueOf(counterMauvais--));
-		//@TODO requete BDD
-	}
+
 	
 	public AnchorPane build() {
-		AnchorPane card = null;
-		
+		AnchorPane card = null;		
 			
 		FXMLLoader loader = new FXMLLoader(
 			    getClass().getResource(
-			        "/vues/Materiel.fxml"
+			        "/vues/MaterielUtilisateur.fxml"
 			    )
 			);
+		
 		loader.setController(this);
 		
 		try {
@@ -113,11 +90,12 @@ public class MaterielUserCardController implements Initializable {
 	}
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL arg0, ResourceBundle arg1) {		
 		nameMat.setText(this.materielModel.getName());
 		labelBon.setText(String.valueOf(this.materielModel.getNbBon()));
 		labelMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
 		labelMauvais.setText(String.valueOf(this.materielModel.getNbMauvais()));
+		labelQuantite.setText("0");
 		
 		
 		Image materielImg = new Image(getClass().getResourceAsStream(this.materielModel.getImagePath()));
@@ -127,9 +105,8 @@ public class MaterielUserCardController implements Initializable {
 		imgContainer.setFill(pattern);
 				
 		
-		counterBon = this.materielModel.getNbBon();
-		counterMoyen = this.materielModel.getNbMoyen();
-		counterMauvais = this.materielModel.getNbMauvais();
+		counterQuantite = 0;
+				
 	}
 
 }

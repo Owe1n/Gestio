@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -52,13 +53,20 @@ public class MainController implements Initializable {
 	@FXML
 	private HBox disconected;
 	
-	
+	@FXML
+	private void handleDisconected(MouseEvent e) {
+		disableBtnNav();
+
+		loadPageLogin("/vues/Login");
+	}	
 	
 	@FXML
 	private void pageMateriel(MouseEvent event) {
 		resetStyleNavBtn();
 		materielBtn.getStyleClass().add("selectedBtn");
 		fp.getChildren().clear();
+		
+		/*@TODO, changer ca en BDD*/
 		Materiel matBdd1 = new Materiel("Souris", "/img/Souris.jpg", 21, 23, 7);
 		Materiel matBdd2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
 		
@@ -91,7 +99,7 @@ public class MainController implements Initializable {
 		
 		fp.getChildren().add(user1.build());
 		fp.getChildren().add(user2.build());
-		//loadPage("/vues/Utilisateurs");
+		
 	}
 	
 	@FXML
@@ -132,9 +140,35 @@ public class MainController implements Initializable {
 		
 	}
 	
-	public void launchAppAdmin(String userName) {
+	public void launchAppUser(Utilisateur user) {
+		eneableDisconected();
+		this.userName.setText(user.getFullName());
+		Image userImg = new Image(getClass().getResourceAsStream(user.getImageUserPath()));
+		this.userImgView.setImage(userImg);
+		
+		fp.getChildren().clear();
+		
+		/*@TODO, changer ca en BDD*/
+		Materiel matUserBdd1 = new Materiel("Souris", "/img/Souris.jpg", 21, 23, 7);
+		Materiel matUserBdd2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
+		
+		MaterielUserCardController matUser1 = new MaterielUserCardController(matUserBdd1);
+		MaterielUserCardController matUser2 = new MaterielUserCardController(matUserBdd2);
+		
+		/*@TODO, changer ca en BDD*/
+		
+		fp.getChildren().add(matUser1.build());
+		fp.getChildren().add(matUser2.build());
+				
+		
+	}
+	
+	public void launchAppAdmin(Utilisateur user) {
 		enableBtnNav();
-		this.userName.setText(userName);
+		
+		this.userName.setText(user.getFullName());
+		Image userImg = new Image(getClass().getResourceAsStream(user.getImageUserPath()));
+		this.userImgView.setImage(userImg);
 		
 		resetStyleNavBtn();
 		demandesBtn.getStyleClass().add("selectedBtn");
@@ -186,6 +220,7 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		disableBtnNav();
+
 		loadPageLogin("/vues/Login");
 
 		//addUtilisateur();
@@ -204,12 +239,24 @@ public class MainController implements Initializable {
 		materielBtn.setDisable(true);
 		utilisateurBtn.setDisable(true);
 		demandesBtn.setDisable(true);
-		disconected.setDisable(true);
 		
 		materielBtn.setVisible(false);
 		utilisateurBtn.setVisible(false);
 		demandesBtn.setVisible(false);
+		
+		disableDisconected();
+	}
+	
+	private void disableDisconected() {
+		disconected.setDisable(true);
 		disconected.setVisible(false);
+
+	}
+	
+	private void eneableDisconected() {
+		disconected.setDisable(false);
+		disconected.setVisible(true);
+		
 	}
 	
 	private void enableBtnNav(){
@@ -222,6 +269,8 @@ public class MainController implements Initializable {
 		utilisateurBtn.setVisible(true);
 		demandesBtn.setVisible(true);
 		disconected.setVisible(true);
+		
+		eneableDisconected();
 	}
 	
 }

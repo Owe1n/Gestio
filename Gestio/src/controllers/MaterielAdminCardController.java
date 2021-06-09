@@ -57,37 +57,49 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleAddBonMateriel(MouseEvent e){
-		labelBon.setText(String.valueOf(counterBon++));
+		labelBon.setText(String.valueOf(++counterBon));
 		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleAddMoyenMateriel(MouseEvent e){
-		labelMoyen.setText(String.valueOf(counterMoyen++));
+		labelMoyen.setText(String.valueOf(++counterMoyen));
 		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleAddMauvaisMateriel(MouseEvent e){
-		labelMauvais.setText(String.valueOf(counterMauvais++));
+		labelMauvais.setText(String.valueOf(++counterMauvais));
 		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveBonMateriel(MouseEvent e){
-		labelBon.setText(String.valueOf(counterBon--));
+		labelBon.setText(String.valueOf(--counterBon));
+		
+		if(counterBon < 0) {
+			counterBon = 0;
+		}
 		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveMoyenMateriel(MouseEvent e){
-		labelMoyen.setText(String.valueOf(counterMoyen--));
+		labelMoyen.setText(String.valueOf(--counterMoyen));
+		
+		if(counterMoyen < 0) {
+			counterMoyen = 0;
+		}
 		//@TODO requete BDD
 	}
 	
 	@FXML
 	private void handleRemoveMauvaisMateriel(MouseEvent e){
-		labelMauvais.setText(String.valueOf(counterMauvais--));
+		labelMauvais.setText(String.valueOf(--counterMauvais));
+		
+		if(counterMauvais < 0) {
+			counterMauvais = 0;
+		}
 		//@TODO requete BDD
 	}
 	
