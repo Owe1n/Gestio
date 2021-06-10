@@ -26,7 +26,6 @@ public class MaterielAdminCardController implements Initializable {
 		this.materielModel = materielModel;
 	}
 	
-	private MainController parent;
 	
 	public void setParent(MainController parent) {
 		this.parent = parent;
