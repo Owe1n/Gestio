@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.MaterielModel;
+import model.UtilisateursModel;
 
 
 public class AddMaterielController extends MainController {
@@ -27,6 +29,9 @@ public class AddMaterielController extends MainController {
 		Materiel nullMateriel = new Materiel();
 		this.materielModel = nullMateriel;
 	}
+	
+	@FXML
+	private TextField textFieldId;
 	
 	@FXML
 	private TextField textFieldName;
@@ -45,7 +50,16 @@ public class AddMaterielController extends MainController {
 		
 	@FXML
 	public void handleClickValider(ActionEvent e) {
-		System.out.println("Valide");
+		MaterielModel matModel = new MaterielModel("Gestio");
+		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())) != null ) {
+			System.out.println("Materiel exist");
+			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
+			matModel.editMateriel(materiel);
+		}else {
+			System.out.println("Materiel doas not exist");
+			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
+			matModel.addMateriel(materiel);
+		}
 		
 	}
 	
@@ -81,7 +95,7 @@ public class AddMaterielController extends MainController {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		textFieldId.setText(String.valueOf(this.materielModel.getId()));
 		textFieldName.setText(this.materielModel.getName());
 		textFieldBon.setText(String.valueOf(this.materielModel.getNbBon()));
 		textFieldMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));

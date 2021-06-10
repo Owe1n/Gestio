@@ -46,6 +46,7 @@ public class UtilisateurCardController implements Initializable {
 		System.out.println("Profil Suprim�");
 		UtilisateursModel userModel = new UtilisateursModel("Gestio");
 		userModel.deleteUtilisateur(utilisateurModel);
+		parent.pageUtilisateurs();
 		
 	}
 	

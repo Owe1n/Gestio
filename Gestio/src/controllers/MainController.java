@@ -63,7 +63,7 @@ public class MainController implements Initializable {
 	}	
 	
 	@FXML
-	private void pageMateriel(MouseEvent event) {
+	 void pageMateriel() {
 		resetStyleNavBtn();
 		materielBtn.getStyleClass().add("selectedBtn");
 		fp.getChildren().clear();
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
 	
 	
 	@FXML
-	private void pageUtilisateurs(MouseEvent event) {
+	 void pageUtilisateurs() {
 		resetStyleNavBtn();
 		utilisateurBtn.getStyleClass().add("selectedBtn");
 		

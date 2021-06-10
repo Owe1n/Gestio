@@ -21,6 +21,7 @@ public class MaterielAdminCardController implements Initializable {
 
 	private Materiel materielModel;
 	private MainController parent;
+	private MaterielModel matModel = new MaterielModel("Gestio");
 	
 	MaterielAdminCardController(Materiel materielModel){
 		this.materielModel = materielModel;
@@ -56,9 +57,8 @@ public class MaterielAdminCardController implements Initializable {
 	@FXML
 	private void handleDeleteMateriel(MouseEvent e){
 		System.out.println("Delete");
-		MaterielModel matModel = new MaterielModel("Gestio");
 		matModel.deleteMateriel(materielModel);
-		//reload the page
+		parent.pageMateriel();
 	}
 	
 	@FXML
@@ -68,20 +68,24 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleAddBonMateriel(MouseEvent e){
+		matModel.addBonMateriel(materielModel);
+		materielModel.setNbBon(materielModel.getNbBon()+1);
 		labelBon.setText(String.valueOf(++counterBon));
-		//@TODO requete BDD
+		
 	}
 	
 	@FXML
 	private void handleAddMoyenMateriel(MouseEvent e){
 		labelMoyen.setText(String.valueOf(++counterMoyen));
-		//@TODO requete BDD
+		matModel.addMoyenMateriel(materielModel);
+		materielModel.setNbMoyen(materielModel.getNbMoyen()+1);
 	}
 	
 	@FXML
 	private void handleAddMauvaisMateriel(MouseEvent e){
 		labelMauvais.setText(String.valueOf(++counterMauvais));
-		//@TODO requete BDD
+		matModel.addMauvaisMateriel(materielModel);
+		materielModel.setNbMauvais(materielModel.getNbMauvais()+1);
 	}
 	
 	@FXML
@@ -91,7 +95,8 @@ public class MaterielAdminCardController implements Initializable {
 		if(counterBon < 0) {
 			counterBon = 0;
 		}
-		//@TODO requete BDD
+		matModel.removeBonMateriel(materielModel);
+		materielModel.setNbBon(counterBon);
 	}
 	
 	@FXML
@@ -101,7 +106,8 @@ public class MaterielAdminCardController implements Initializable {
 		if(counterMoyen < 0) {
 			counterMoyen = 0;
 		}
-		//@TODO requete BDD
+		matModel.removeMoyenMateriel(materielModel);
+		materielModel.setNbMoyen(counterMoyen);
 	}
 	
 	@FXML
@@ -111,7 +117,8 @@ public class MaterielAdminCardController implements Initializable {
 		if(counterMauvais < 0) {
 			counterMauvais = 0;
 		}
-		//@TODO requete BDD
+		matModel.removeMauvaisMateriel(materielModel);
+		materielModel.setNbMauvais(counterMauvais);
 	}
 	
 	public AnchorPane build() {
@@ -137,6 +144,7 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
 		nameMat.setText(this.materielModel.getName());
 		labelBon.setText(String.valueOf(this.materielModel.getNbBon()));
 		labelMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
