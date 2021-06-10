@@ -59,7 +59,7 @@ public class MainController implements Initializable {
 	private void handleDisconected(MouseEvent e) {
 		disableBtnNav();
 
-		//loadPageLogin("/vues/Login");
+		loadPageLogin("/vues/Login");
 	}	
 	
 	@FXML
@@ -67,13 +67,8 @@ public class MainController implements Initializable {
 		resetStyleNavBtn();
 		materielBtn.getStyleClass().add("selectedBtn");
 		fp.getChildren().clear();
-		
-		/*@TODO, changer ca en BDD*/
-		Materiel matBdd1 = new Materiel("Souris", "/img/Souris.jpg", 21, 23, 7);
-		Materiel matBdd2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
-		MaterielModel materielModel = new MaterielModel("Gestio");		
-		materielModel.addMateriel(matBdd1);
-		materielModel.addMateriel(matBdd2);
+	
+		MaterielModel materielModel = new MaterielModel("Gestio");			
 		for(Materiel m: materielModel.materiels) {
 			fp.getChildren().add(new MaterielAdminCardController(m).build());
 		}
@@ -92,7 +87,10 @@ public class MainController implements Initializable {
 		
 		UtilisateursModel utilisateursModel = new UtilisateursModel("Gestio");			
 		for(Utilisateur u: utilisateursModel.utilisateurs) {
-			fp.getChildren().add(new UtilisateurCardController(u).build());
+			UtilisateurCardController userCardController = new UtilisateurCardController(u);
+			userCardController.setParent(this);
+			fp.getChildren().add(userCardController.build());
+			
 		}
 	
 		//loadPage("/vues/Utilisateurs");
