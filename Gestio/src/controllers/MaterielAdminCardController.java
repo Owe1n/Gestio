@@ -23,6 +23,12 @@ public class MaterielAdminCardController implements Initializable {
 		this.materielModel = materielModel;
 	}
 	
+	private MainController parent;
+	
+	public void setParent(MainController parent) {
+		this.parent = parent;
+	}
+	
 	@FXML
 	private Rectangle imgContainer;
 	
@@ -52,7 +58,7 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleEditMateriel(MouseEvent e){
-		System.out.println("Edit");
+		parent.editMateriel(materielModel);
 	}
 	
 	@FXML
