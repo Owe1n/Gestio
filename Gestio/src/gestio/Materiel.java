@@ -1,14 +1,15 @@
 package gestio;
 
 public class Materiel {
-
+	private int id;
 	private String name;
 	private String imagePath;
 	private int nbBon;
 	private int nbMoyen;
 	private int nbMauvais;
 	
-	public Materiel(String name, String imagePath, int nbBon, int nbMoyen, int nbMauvais){
+	public Materiel(int id, String name, String imagePath, int nbBon, int nbMoyen, int nbMauvais){
+		this.setId(id);
 		this.setName(name);
 		this.setImagePath(imagePath);
 		this.setNbBon(nbBon);
@@ -59,6 +60,12 @@ public class Materiel {
 
 	public void setNbMauvais(int nbMauvais) {
 		this.nbMauvais = nbMauvais;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

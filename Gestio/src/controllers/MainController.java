@@ -70,7 +70,9 @@ public class MainController implements Initializable {
 	
 		MaterielModel materielModel = new MaterielModel("Gestio");			
 		for(Materiel m: materielModel.materiels) {
-			fp.getChildren().add(new MaterielAdminCardController(m).build());
+			MaterielAdminCardController materielCardController = new MaterielAdminCardController(m);
+			//materielCardController.setParent(this);
+			fp.getChildren().add(materielCardController.build());
 		}
 		
 	
@@ -123,13 +125,6 @@ public class MainController implements Initializable {
 	
 	public void addUtilisateur() {
 		fp.getChildren().clear();
-		
-		//AddUtilisateurController addUser = new AddUtilisateurController("Owein", "Gourneau", "o.g@gmail.com", "123","/img/user1.png");
-		Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User1.png", 1);
-		AddUtilisateurController addUser = new AddUtilisateurController(monUtilisateur);
-		//addUser = Si on doit modifier un user
-		//addUser = Si on doit ajouter un tout nouveau user
-		
 		fp.getChildren().add(new AddUtilisateurController().build());
 		
 	}
@@ -158,18 +153,12 @@ public class MainController implements Initializable {
 		
 		fp.getChildren().clear();
 		
-		/*@TODO, changer ca en BDD*/
-		Materiel matUserBdd1 = new Materiel("Souris", "/img/Souris.jpg", 21, 23, 7);
-		Materiel matUserBdd2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
-		
-		MaterielUserCardController matUser1 = new MaterielUserCardController(matUserBdd1);
-		MaterielUserCardController matUser2 = new MaterielUserCardController(matUserBdd2);
-		
-		/*@TODO, changer ca en BDD*/
-		
-		fp.getChildren().add(matUser1.build());
-		fp.getChildren().add(matUser2.build());
-				
+		MaterielModel materielModel = new MaterielModel("Gestio");			
+		for(Materiel m: materielModel.materiels) {
+			MaterielUserCardController materielCardController = new MaterielUserCardController(m);
+			//materielCardController.setParent(this);
+			fp.getChildren().add(materielCardController.build());
+		}		
 		
 	}
 	
@@ -230,10 +219,15 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		disableBtnNav();
+	
+	
+	
+	
 
-		loadPageLogin("/vues/Login");
 		
-		//AddMaterielController addMatC = new AddMaterielController();
+	
+		loadPageLogin("/vues/Login");
+		//loadPage("/vues/AddUtilisateur");
 		
 		//fp.getChildren().add(addMatC.build());
 

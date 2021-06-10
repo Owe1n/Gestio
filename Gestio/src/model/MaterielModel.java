@@ -32,7 +32,7 @@ public class MaterielModel extends Connect  {
             // loop through the result set
             while (rs.next()) {
            
-                Materiel materiel = new Materiel(rs.getString("name"), rs.getString("imgSrc"), rs.getInt("nbBon"), rs.getInt("nbMoyen"), rs.getInt("nbMauvais"));
+                Materiel materiel = new Materiel(rs.getInt("id_materiel"),rs.getString("name"), rs.getString("imgSrc"), rs.getInt("nbBon"), rs.getInt("nbMoyen"), rs.getInt("nbMauvais"));
             
                 materielTemp.add(materiel);
                 
@@ -54,8 +54,8 @@ public class MaterielModel extends Connect  {
 				materiel.setName(rs.getString("name"));
 				materiel.setImagePath(rs.getString("imgSrc"));
 				materiel.setNbBon(rs.getInt("nbBon"));
-				materiel.setNbBon(rs.getInt("nbMoyen"));
-				materiel.setNbBon(rs.getInt("nbMauvais"));
+				materiel.setNbMoyen(rs.getInt("nbMoyen"));
+				materiel.setNbMauvais(rs.getInt("nbMauvais"));
 				
 				
 	        
@@ -87,10 +87,40 @@ public class MaterielModel extends Connect  {
 	}
 
 	public void deleteMateriel(Materiel mat){
+		String sql = "DELETE FROM materiel WHERE id_materiel = '"+mat.getId()+"'";
 		
+		System.out.println(sql);
+		try (Connection conn =  DriverManager.getConnection(this.url);  
+	             Statement stmt  = conn.createStatement();
+	             ){
+			stmt.executeUpdate(sql);
+	          
+			
+	
+	           
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
 	}
 	
 	public void editMateriel(Materiel mat){
+		String sql = "UPDATE materiel SET name= '"+mat.getName()+"', "
+				+ "imgSrc ='"+mat.getImagePath() + "', nbBon='"+mat.getNbBon()+"',"
+						+ "nbMoyen = '"+mat.getNbMoyen()+"',nbMauvais = '"+mat.getNbMauvais()+
+							"' WHERE id_materiel = "+ "'"+mat.getId()+"'";
+			
+		System.out.println(sql);
+		try (Connection conn =  DriverManager.getConnection(this.url);  
+	             Statement stmt  = conn.createStatement();
+	             ){
+			stmt.executeUpdate(sql);
+	          
+			
+	
+	           
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
 		
 	}
 	

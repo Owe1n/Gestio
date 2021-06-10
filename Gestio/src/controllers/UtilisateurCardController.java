@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import model.UtilisateursModel;
 
 public class UtilisateurCardController implements Initializable {
 
@@ -42,7 +43,10 @@ public class UtilisateurCardController implements Initializable {
 	
 	@FXML
 	public void handleClickDelete(MouseEvent e) {
-		System.out.println("Profil Suprimé");
+		System.out.println("Profil Suprimï¿½");
+		UtilisateursModel userModel = new UtilisateursModel("Gestio");
+		userModel.deleteUtilisateur(utilisateurModel);
+		
 	}
 	
 	@FXML

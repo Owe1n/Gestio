@@ -1,7 +1,7 @@
 package gestio;
 
 public class Utilisateur {
-
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -9,7 +9,8 @@ public class Utilisateur {
 	private String imageUserPath;
 	private int autorithyLevel;
 	
-	public Utilisateur(String firstName, String lastName, String email, String password, String imageUserPath, int autorithyLevel){
+	public Utilisateur(int id, String firstName, String lastName, String email, String password, String imageUserPath, int autorithyLevel){
+		this.setId(id);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -60,6 +61,12 @@ public class Utilisateur {
 	}
 	public void setAutorithyLevel(int autorithyLevel) {
 		this.autorithyLevel = autorithyLevel;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	

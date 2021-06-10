@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import model.UtilisateursModel;
 
 
 public class AddUtilisateurController extends MainController {
@@ -26,6 +27,8 @@ public class AddUtilisateurController extends MainController {
 		Utilisateur nullUser = new Utilisateur();
 		this.utilisateurModel = nullUser;
 	}
+	@FXML
+	private TextField textFieldId;
 	
 	@FXML
 	private TextField textFieldPrenom;
@@ -50,11 +53,31 @@ public class AddUtilisateurController extends MainController {
 		
 	@FXML
 	public void handleClickValider(ActionEvent e) {
-		System.out.println("Valide");
+		UtilisateursModel modelUser = new UtilisateursModel("Gestio");
+		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
+			System.out.println("User exist");
+			int authority = 0;
+			if( isAdmin.isSelected() == true) {
+				authority = 1;
+			}; 
+			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+			modelUser.editUtilisateur(user);
+		}else {
+			System.out.println("User does not exist");
+			int authority = 0;
+			if( isAdmin.isSelected() == true) {
+				authority = 1;
+			}; 
+			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+			modelUser.addUtilisateur(user);
+		}
+		
+		
 		
 	}
 	
 	public void addUserInformation(String Prenom, String nom, String email, String mdp, String userImgPath) {
+		
 		textFieldPrenom.setText(Prenom);
 		textFieldNom.setText(nom);
 		textFieldEmail.setText(email);
@@ -87,6 +110,7 @@ public class AddUtilisateurController extends MainController {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
+		textFieldId.setText(String.valueOf(this.utilisateurModel.getId()));
 		textFieldPrenom.setText(this.utilisateurModel.getFirstName());
 		textFieldNom.setText(this.utilisateurModel.getLastName());
 		textFieldEmail.setText(this.utilisateurModel.getEmail());

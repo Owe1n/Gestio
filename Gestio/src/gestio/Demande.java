@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Demande {
-
+	private int id;
 	private Utilisateur user;
 	private HashMap<Materiel, ArrayList<Integer>> materiels; 
 	private int typeDemande;
 	
-	public Demande(Utilisateur user, int typeDemande){
+	public Demande(int id, Utilisateur user, int typeDemande){
+		this.setId(id);
 		this.user = user;
 		this.typeDemande = typeDemande;
 		this.materiels = new HashMap<Materiel, ArrayList<Integer>>();
@@ -48,6 +49,14 @@ public class Demande {
 
 	public void setTypeDemande(int typeDemande) {
 		this.typeDemande = typeDemande;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

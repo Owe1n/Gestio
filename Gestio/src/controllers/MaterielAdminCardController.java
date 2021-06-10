@@ -14,10 +14,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import model.MaterielModel;
+import model.UtilisateursModel;
 
 public class MaterielAdminCardController implements Initializable {
 
 	private Materiel materielModel;
+	private MainController parent;
 	
 	MaterielAdminCardController(Materiel materielModel){
 		this.materielModel = materielModel;
@@ -48,6 +51,9 @@ public class MaterielAdminCardController implements Initializable {
 	@FXML
 	private void handleDeleteMateriel(MouseEvent e){
 		System.out.println("Delete");
+		MaterielModel matModel = new MaterielModel("Gestio");
+		matModel.deleteMateriel(materielModel);
+		//reload the page
 	}
 	
 	@FXML
