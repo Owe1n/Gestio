@@ -74,9 +74,7 @@ public class MainController implements Initializable {
 			//materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}
-		
-	
-		
+
 	}
 	
 	
@@ -142,6 +140,14 @@ public class MainController implements Initializable {
 		fp.getChildren().clear();
 		
 		fp.getChildren().add(new AddMaterielController().build());
+		
+	}
+	
+	
+	public void editMateriel(Materiel mat) {
+		fp.getChildren().clear();
+		
+		fp.getChildren().add(new AddMaterielController(mat).build());
 		
 	}
 	
