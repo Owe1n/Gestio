@@ -71,7 +71,7 @@ public class MainController implements Initializable {
 		MaterielModel materielModel = new MaterielModel("Gestio");			
 		for(Materiel m: materielModel.materiels) {
 			MaterielAdminCardController materielCardController = new MaterielAdminCardController(m);
-			//materielCardController.setParent(this);
+			materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}
 
