@@ -9,7 +9,7 @@
 				<defo><![CDATA[1]]></defo>
 			</column>
 			<column name="quantity_moyen" type="integer" jt="4" />
-			<column name="quantite_mauvais" type="integer" jt="4" />
+			<column name="quantity_mauvais" prior="quantite_mauvais" type="integer" jt="4" />
 			<index name="pk_demande" unique="PRIMARY_KEY" >
 				<column name="id_demande" />
 			</index>
@@ -57,11 +57,10 @@
 		<entity schema="Default" name="utilisateur" color="C1D8EE" x="48" y="48" />
 		<script name="SQL_Editor" id="Editor_cf5" language="SQL" >
 			<string><![CDATA[SELECT distinct d.id_utilisateur  
-FROM demande d
-]]></string>
+FROM demande d]]></string>
 		</script>
 		<query id="Query_f81" name="Builder" groupby="y" >
-			<query_table schema="Default" name="demande" alias="d" x="768" y="208" >
+			<query_table schema="Default" name="demande" alias="d" x="48" y="48" >
 				<column name="id_demande" />
 				<column name="quantity_bon" />
 			</query_table>
@@ -70,7 +69,7 @@ FROM demande d
 			<query_table schema="Default" name="demande" alias="d" x="48" y="96" >
 				<column name="quantity_bon" />
 				<column name="quantity_moyen" />
-				<column name="quantite_mauvais" />
+				<column name="quantity_mauvais" />
 				<query_table schema="Default" name="utilisateur" alias="u" x="400" y="48" fk="fk_demande_utilisateur" type="Inner Join" >
 					<column name="firstname" />
 					<column name="lastname" />

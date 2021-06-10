@@ -16,7 +16,7 @@ import tools.Connect;
 public class MaterielModel extends Connect  {
 
 	
-	ArrayList<Materiel> materiels;
+	public ArrayList<Materiel> materiels;
 	public MaterielModel(String name_of_db) {
 		super(name_of_db);
 		this.materiels = getAllMateriel();
@@ -71,6 +71,19 @@ public class MaterielModel extends Connect  {
 	
 	public void addMateriel(Materiel mat){
 		
+		String sql = "INSERT INTO materiel (name,imgSrc,nbBon,nbMoyen,nbMauvais) VALUES('"+mat.getName() +"','"+mat.getImagePath()+"','"+mat.getNbBon()+ "','"+mat.getNbMoyen()+"','"+mat.getNbMauvais()+"')";
+		System.out.println(sql);
+		try (Connection conn =  DriverManager.getConnection(this.url);  
+	             Statement stmt  = conn.createStatement();
+	             ){
+			stmt.executeUpdate(sql);
+	          
+			
+	
+	           
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
 	}
 
 	public void deleteMateriel(Materiel mat){

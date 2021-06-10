@@ -25,6 +25,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import model.DemandesModel;
+import model.MaterielModel;
+import model.UtilisateursModel;
 public class MainController implements Initializable {
 	
 	
@@ -69,15 +71,14 @@ public class MainController implements Initializable {
 		/*@TODO, changer ca en BDD*/
 		Materiel matBdd1 = new Materiel("Souris", "/img/Souris.jpg", 21, 23, 7);
 		Materiel matBdd2 = new Materiel("Clavier","/img/Clavier.jpg", 14, 15, 8);
+		MaterielModel materielModel = new MaterielModel("Gestio");		
+		materielModel.addMateriel(matBdd1);
+		materielModel.addMateriel(matBdd2);
+		for(Materiel m: materielModel.materiels) {
+			fp.getChildren().add(new MaterielAdminCardController(m).build());
+		}
 		
-		MaterielAdminCardController mat1 = new MaterielAdminCardController(matBdd1);
-		MaterielAdminCardController mat2 = new MaterielAdminCardController(matBdd2);
-		
-		/*@TODO, changer ca en BDD*/
-		
-		fp.getChildren().add(mat1.build());
-		fp.getChildren().add(mat2.build());
-		//loadPage("/vues/Materiel");
+	
 		
 	}
 	
@@ -89,20 +90,12 @@ public class MainController implements Initializable {
 		
 		fp.getChildren().clear();
 		
-		/*@TODO, changer ca en BDD*/
-		Utilisateur monUtilisateur = new Utilisateur("firstName", "lastName", "email@email.com", "12345password", "/img/User1.png", 1);
-		Utilisateur monUtilisateur2 = new Utilisateur("aeaeazeazeaze", "aeaeaze", "email@eazeazeazeazemail.com", "12345password", "/img/User1.png", 0);
-		
-		UtilisateurCardController user1 = new UtilisateurCardController(monUtilisateur);
-		UtilisateurCardController user2 = new UtilisateurCardController(monUtilisateur2);
-		/*@TODO, changer ca en BDD*/
-		
-		user1.setParent(this);
-		user2.setParent(this);
-		
-		fp.getChildren().add(user1.build());
-		fp.getChildren().add(user2.build());
-		
+		UtilisateursModel utilisateursModel = new UtilisateursModel("Gestio");			
+		for(Utilisateur u: utilisateursModel.utilisateurs) {
+			fp.getChildren().add(new UtilisateurCardController(u).build());
+		}
+	
+		//loadPage("/vues/Utilisateurs");
 	}
 	
 	@FXML
