@@ -11,60 +11,72 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="400.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
-   <top>
-      <AnchorPane prefHeight="80.0" prefWidth="200.0" styleClass="topnav" BorderPane.alignment="CENTER">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="400.0" prefHeight="766.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <BorderPane fx:id="bp" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="400.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="80.0" prefWidth="200.0" styleClass="topnav" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="31.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/logoNav.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="75.0" prefHeight="80.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="materielBtn" mnemonicParsing="false" onMouseClicked="#pageMateriel" prefHeight="80.0" prefWidth="95.0" styleClass="menuButton" text="Matériel">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="utilisateurBtn" mnemonicParsing="false" onMouseClicked="#pageUtilisateurs" prefHeight="80.0" prefWidth="120.0" styleClass="menuButton" text="Utilisateurs" />
+                        <Button fx:id="demandesBtn" mnemonicParsing="false" onMouseClicked="#pageDemandes" prefHeight="80.0" prefWidth="113.0" styleClass="menuButton" text="Retours" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="disconected" alignment="CENTER" onMousePressed="#handleDisconected" prefHeight="56.0" prefWidth="200.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="userName" style="-fx-text-fill: white;" text="utilisateur277">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="userImgView" fitHeight="58.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/user2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="1366.0" stylesheets="@app.css">
+               <content>
+                  <FlowPane fx:id="fp" alignment="CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
+                     <padding>
+                        <Insets bottom="50.0" top="80.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+      <HBox alignment="CENTER" prefHeight="0.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="31.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/logoNav.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" layoutX="75.0" prefHeight="80.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Button fx:id="materielBtn" mnemonicParsing="false" onMouseClicked="#pageMateriel" prefHeight="80.0" prefWidth="95.0" styleClass="menuButton" text="Matériel">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin></Button>
-                  <Button fx:id="utilisateurBtn" mnemonicParsing="false" onMouseClicked="#pageUtilisateurs" prefHeight="80.0" prefWidth="120.0" styleClass="menuButton" text="Utilisateurs" />
-                  <Button fx:id="demandesBtn" mnemonicParsing="false" onMouseClicked="#pageDemandes" prefHeight="80.0" prefWidth="113.0" styleClass="menuButton" text="Retours" />
-               </children>
-            </HBox>
-            <HBox fx:id="disconected" alignment="CENTER" onMousePressed="#handleDisconected" prefHeight="56.0" prefWidth="200.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label fx:id="userName" style="-fx-text-fill: white;" text="utilisateur277">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ImageView fx:id="userImgView" fitHeight="58.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/user2.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </HBox>
+            <Button fx:id="btnAjout" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#handleClickAjout" prefHeight="39.0" prefWidth="210.0" text="Ajouter Utilisateur" />
          </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <ScrollPane fitToWidth="true" prefHeight="500.0" prefWidth="1366.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   		<content>
-     		<FlowPane fx:id="fp" alignment="CENTER" hgap="50.0" maxHeight="-Infinity" maxWidth="Infinity" minHeight="-Infinity" prefWidth="600.0" vgap="50.0">
-        		
-        
-		         <padding>
-		            <Insets bottom="50.0" top="80.0" />
-		         </padding>
-		     </FlowPane>
-		   </content>
-		</ScrollPane>
-   </center>
-</BorderPane>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -56,6 +56,24 @@ public class MainController implements Initializable {
 	private HBox disconected;
 	
 	@FXML
+	private Button btnAjout;
+	
+	@FXML
+	private void handleClickAjout(MouseEvent e) {
+		//Ajouter Utilisateur
+		//Ajouter Matériel
+		
+		if(btnAjout.getText().equals("Ajouter Utilisateur")) {
+			addUtilisateur();
+			disableAddButton();
+		}else {
+			addMateriel();	
+			disableAddButton();
+		}
+		
+	}
+	
+	@FXML
 	private void handleDisconected(MouseEvent e) {
 		disableBtnNav();
 
@@ -74,6 +92,9 @@ public class MainController implements Initializable {
 			materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}
+		btnAjout.setText("Ajouter Matériel");
+		enableAddButton();
+		
 
 	}
 	
@@ -92,6 +113,8 @@ public class MainController implements Initializable {
 			fp.getChildren().add(userCardController.build());
 			
 		}
+		btnAjout.setText("Ajouter Utilisateur");
+		enableAddButton();
 	
 		//loadPage("/vues/Utilisateurs");
 	}
@@ -108,6 +131,8 @@ public class MainController implements Initializable {
 			for(Demande d: demandeModel.demandes) {
 				fp.getChildren().add(new DemandeCardController(d).build());
 			}
+			
+			disableAddButton();
 		
 	}
 	
@@ -258,6 +283,7 @@ public class MainController implements Initializable {
 		demandesBtn.setVisible(false);
 		
 		disableDisconected();
+		disableAddButton();
 	}
 	
 	private void disableDisconected() {
@@ -284,6 +310,16 @@ public class MainController implements Initializable {
 		disconected.setVisible(true);
 		
 		eneableDisconected();
+	}
+	
+	private void disableAddButton() {
+		btnAjout.setDisable(true);
+		btnAjout.setVisible(false);
+	}
+	
+	private void enableAddButton() {
+		btnAjout.setDisable(false);
+		btnAjout.setVisible(true);
 	}
 	
 }
