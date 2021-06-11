@@ -44,6 +44,11 @@ public class MaterielUserCardController implements Initializable {
 	private Integer counterQuantite;
 	
 	@FXML
+	private void handleValiderDemande(MouseEvent e){
+		System.out.println("Commande Validé");
+	}
+	
+	@FXML
 	private void handleAddQuantite(MouseEvent e){
 		
 		labelQuantite.setText(String.valueOf(++counterQuantite));
