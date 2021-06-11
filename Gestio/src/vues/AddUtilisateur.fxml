@@ -70,7 +70,12 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <CheckBox fx:id="isAdmin" mnemonicParsing="false" prefHeight="17.0" prefWidth="9999999.0" text="Administrateur" />
+                  <CheckBox fx:id="isAdmin" mnemonicParsing="false" prefHeight="17.0" prefWidth="293.0" text="Administrateur" />
+                  <Label onMouseClicked="#handleAnnulerAjout" styleClass="demandeRefuser" text="Annuler">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </Label>
                   <Button fx:id="validerBtn" alignment="CENTER" minWidth="200.0" mnemonicParsing="false" onAction="#handleClickValider" prefHeight="63.0" prefWidth="226.0" text="Valider" />
                </children>
             </HBox>

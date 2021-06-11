@@ -65,6 +65,11 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
+                  <Label onMouseClicked="#handleAnnulerAjout" styleClass="demandeRefuser" text="Annuler">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
                   <Button alignment="CENTER" minWidth="200.0" mnemonicParsing="false" onAction="#handleClickValider" prefHeight="63.0" prefWidth="226.0" text="Valider" />
                </children>
             </HBox>

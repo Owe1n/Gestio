@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.MaterielModel;
 import model.UtilisateursModel;
@@ -47,6 +48,11 @@ public class AddMaterielController extends MainController {
 	
 	@FXML
 	private TextField textFieldMaterielImgPath;
+	
+	@FXML
+	public void handleAnnulerAjout(MouseEvent e) {
+		System.out.println("Annuler");
+	}
 		
 	@FXML
 	public void handleClickValider(ActionEvent e) {
