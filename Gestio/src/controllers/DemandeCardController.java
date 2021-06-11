@@ -22,10 +22,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import model.DemandesModel;
 
 public class DemandeCardController implements Initializable {
 	
 	private Demande demandeModel;
+	
+	private MainController parent;
 	
 	DemandeCardController(Demande demandeModel){
 		this.demandeModel = demandeModel;
@@ -70,6 +73,10 @@ public class DemandeCardController implements Initializable {
 	@FXML
 	public void handleClickValider(ActionEvent e) {
 		System.out.println("Valide");
+		DemandesModel demMod = new DemandesModel("Gestio");
+		demMod.validerDemande(demandeModel);
+		parent.pageDemandes();
+		
 		
 	}
 
@@ -77,6 +84,9 @@ public class DemandeCardController implements Initializable {
 	@FXML
 	public void handleClickRefuser(MouseEvent e) {
 		System.out.println("Refuse");
+		DemandesModel demMod = new DemandesModel("Gestio");
+		demMod.validerDemande(demandeModel);
+		parent.pageDemandes();
 	}
 	
 
@@ -127,6 +137,10 @@ public class DemandeCardController implements Initializable {
 			listeMaterielsContainer.getChildren().add(matItem);
 		}
 		
+	}
+
+	public void setParent(MainController parent) {
+		this.parent = parent;
 	}
 	
 

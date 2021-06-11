@@ -10,7 +10,7 @@ public class Utilisateur {
 	private int autorithyLevel;
 	
 	public Utilisateur(int id, String firstName, String lastName, String email, String password, String imageUserPath, int autorithyLevel){
-		this.setId(id);
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;

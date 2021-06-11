@@ -53,7 +53,7 @@ public class UtilisateursModel extends Connect {
 		try (Connection conn =  DriverManager.getConnection(this.url);  
 	             Statement stmt  = conn.createStatement();
 	             ResultSet rs    = stmt.executeQuery(sql)){
-	          
+	          	user.setId(id);
 				user.setFirstName(rs.getString("firstname"));
 				user.setLastName(rs.getString("lastname"));
 				user.setEmail(rs.getString("email"));
@@ -79,7 +79,8 @@ public class UtilisateursModel extends Connect {
 		try (Connection conn =  DriverManager.getConnection(this.url);  
 	             Statement stmt  = conn.createStatement();
 	             ResultSet rs    = stmt.executeQuery(sql)){
-				System.out.println(rs.getString("firstname"));
+			
+				user.setId(rs.getInt("id_utilisateur"));
 				user.setFirstName(rs.getString("firstname"));
 				user.setLastName(rs.getString("lastname"));
 				user.setEmail(rs.getString("email"));

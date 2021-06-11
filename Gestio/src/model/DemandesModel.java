@@ -98,6 +98,7 @@ public class DemandesModel extends Connect {
 		for (Integer i : ids) {
 			Demande demande = new Demande();
 			demande.setUser(userModel.getUtilisateurById(i));
+			
 			HashMap<Materiel, ArrayList<Integer>> materiels = new HashMap<Materiel, ArrayList<Integer>>();
 			String sql2 = "SELECT * \r\n"
     				+ "FROM demande d\r\n"
@@ -106,8 +107,10 @@ public class DemandesModel extends Connect {
     				+ "WHERE d.id_utilisateur = "+ i ;
     	    
     		try (Connection conn = DriverManager.getConnection(this.url); Statement stmt2  = conn.createStatement(); ResultSet rs2= stmt2.executeQuery(sql2)){
+    			demande.setId(rs2.getInt("id_demande"));
     			while (rs2.next()) 
     			{	
+    				
     				
     				int id_materiel = rs2.getInt("id_materiel");
     				int quantity_bon =  rs2.getInt("quantity_bon");
@@ -181,7 +184,7 @@ public class DemandesModel extends Connect {
 
 	public void validerDemande(Demande dem) {
 		MaterielModel matModel = new MaterielModel("Gestio");
-		String sql = "DELETE FROM demande WHERE id_demande = '"+dem.getId()+"'";
+		String sql = "DELETE FROM demande WHERE id_utilisateur = '"+dem.getUser().getId()+"'";
 		
 		System.out.println(sql);
 		try (Connection conn =  DriverManager.getConnection(this.url);  

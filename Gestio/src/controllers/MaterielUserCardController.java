@@ -8,16 +8,19 @@ import gestio.Materiel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+import model.DemandesModel;
 
 public class MaterielUserCardController implements Initializable {
 
 	private Materiel materielModel;
+	private MainController parent;
 	
 	MaterielUserCardController(Materiel materielModel){
 		this.materielModel = materielModel;
@@ -45,7 +48,12 @@ public class MaterielUserCardController implements Initializable {
 	
 	@FXML
 	private void handleValiderDemande(MouseEvent e){
-		System.out.println("Commande Validé");
+		System.out.println("Commande Validï¿½");
+		String quantity = labelQuantite.getText();
+		DemandesModel demMod = new DemandesModel("Gestio");
+		System.out.println(parent.user.getId());
+		demMod.addDemand(parent.user, materielModel, Integer.parseInt(quantity));
+		parent.launchAppUser(parent.user);
 	}
 	
 	@FXML
@@ -57,8 +65,7 @@ public class MaterielUserCardController implements Initializable {
 			counterQuantite = this.materielModel.getTotalItem();
 			labelQuantite.setText(String.valueOf(counterQuantite));
 		}
-		
-		//@TODO requete BDD
+	
 	}
 	
 	@FXML
@@ -70,8 +77,7 @@ public class MaterielUserCardController implements Initializable {
 			labelQuantite.setText(String.valueOf(counterQuantite));
 		}
 		
-		//@TODO requete BDD
-	}
+		}
 	
 
 	
@@ -114,6 +120,10 @@ public class MaterielUserCardController implements Initializable {
 		
 		counterQuantite = 0;
 				
+	}
+
+	public void setParent(MainController parent) {
+		this.parent = parent;
 	}
 
 }

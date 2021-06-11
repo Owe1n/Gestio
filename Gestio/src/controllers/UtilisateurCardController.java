@@ -52,6 +52,8 @@ public class UtilisateurCardController implements Initializable {
 	
 	@FXML
 	public void handleClickEdit(MouseEvent e) {
+		parent.disableAddButton();
+
 		parent.editUtilisateur(utilisateurModel);
 	}
 	

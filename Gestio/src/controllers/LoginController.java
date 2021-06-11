@@ -34,8 +34,7 @@ public class LoginController implements Initializable {
 		UtilisateursModel userMod = new UtilisateursModel("Gestio");
 
 		Utilisateur user = userMod.getUtilisateurByEmail(emailInput.getText());
-		System.out.println(user.getFirstName());
-
+	
 		if (mdpInput.getText().equals(user.getPassword()) && emailInput.getText().equals(user.getEmail())
 				&& user.getAutorithyLevel() == 1) {
 			System.out.println("Connect� Admin !!");

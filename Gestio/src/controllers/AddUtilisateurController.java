@@ -19,6 +19,7 @@ import model.UtilisateursModel;
 public class AddUtilisateurController extends MainController {
 	
 	private Utilisateur utilisateurModel;
+	private MainController parent;
 	
 	AddUtilisateurController(Utilisateur utilisateurModel){
 		this.utilisateurModel = utilisateurModel;
@@ -55,6 +56,7 @@ public class AddUtilisateurController extends MainController {
 	@FXML
 	public void handleAnnulerAjout(MouseEvent e) {
 		System.out.println("Annuler");
+		parent.pageUtilisateurs();
 	}
 		
 	@FXML
@@ -77,7 +79,7 @@ public class AddUtilisateurController extends MainController {
 			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
 			modelUser.addUtilisateur(user);
 		}
-		
+		parent.pageUtilisateurs();
 		
 		
 	}
@@ -129,6 +131,10 @@ public class AddUtilisateurController extends MainController {
 		}
 
 		
+	}
+
+	public void setParent(MainController parent) {
+		this.parent = parent;
 	}
 	
 	

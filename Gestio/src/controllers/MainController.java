@@ -46,6 +46,8 @@ public class MainController implements Initializable {
 	@FXML
 	private TextField emailInput;
 	
+	Utilisateur user;
+	
 	@FXML
 	private Label userName;
 	
@@ -61,7 +63,7 @@ public class MainController implements Initializable {
 	@FXML
 	private void handleClickAjout(MouseEvent e) {
 		//Ajouter Utilisateur
-		//Ajouter Matériel
+		//Ajouter Matï¿½riel
 		
 		if(btnAjout.getText().equals("Ajouter Utilisateur")) {
 			addUtilisateur();
@@ -92,7 +94,7 @@ public class MainController implements Initializable {
 			materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}
-		btnAjout.setText("Ajouter Matériel");
+		btnAjout.setText("Ajouter Materiel");
 		enableAddButton();
 		
 
@@ -120,7 +122,7 @@ public class MainController implements Initializable {
 	}
 	
 	@FXML
-	private void pageDemandes(MouseEvent event) {	
+	 void pageDemandes() {	
 			resetStyleNavBtn();
 			demandesBtn.getStyleClass().add("selectedBtn");
 		
@@ -129,7 +131,9 @@ public class MainController implements Initializable {
 			
 			DemandesModel demandeModel = new DemandesModel("Gestio");			
 			for(Demande d: demandeModel.demandes) {
-				fp.getChildren().add(new DemandeCardController(d).build());
+				DemandeCardController ctrl = new DemandeCardController(d);
+				ctrl.setParent(this);
+				fp.getChildren().add(ctrl.build());
 			}
 			
 			disableAddButton();
@@ -148,7 +152,9 @@ public class MainController implements Initializable {
 	
 	public void addUtilisateur() {
 		fp.getChildren().clear();
-		fp.getChildren().add(new AddUtilisateurController().build());
+		AddUtilisateurController ctrll = new AddUtilisateurController();
+		ctrll.setParent(this);
+		fp.getChildren().add(ctrll.build());
 		
 	}
 	
@@ -156,28 +162,32 @@ public class MainController implements Initializable {
 		fp.getChildren().clear();
 
 		AddUtilisateurController editUser = new AddUtilisateurController(user);
-		
+		editUser.setParent(this);
 		fp.getChildren().add(editUser.build());
 		
 	}
 	
 	public void addMateriel() {
 		fp.getChildren().clear();
+		AddMaterielController ctrll = new AddMaterielController();
+		ctrll.setParent(this);
+		fp.getChildren().add(ctrll.build());
 		
-		fp.getChildren().add(new AddMaterielController().build());
 		
 	}
 	
 	
 	public void editMateriel(Materiel mat) {
 		fp.getChildren().clear();
-		
-		fp.getChildren().add(new AddMaterielController(mat).build());
+		AddMaterielController ctrll = new AddMaterielController(mat);
+		ctrll.setParent(this);
+		fp.getChildren().add(ctrll.build());
 		
 	}
 	
 	public void launchAppUser(Utilisateur user) {
 		eneableDisconected();
+		this.user = user;
 		this.userName.setText(user.getFullName());
 		Image userImg = new Image(getClass().getResourceAsStream(user.getImageUserPath()));
 		this.userImgView.setImage(userImg);
@@ -187,7 +197,7 @@ public class MainController implements Initializable {
 		MaterielModel materielModel = new MaterielModel("Gestio");			
 		for(Materiel m: materielModel.materiels) {
 			MaterielUserCardController materielCardController = new MaterielUserCardController(m);
-			//materielCardController.setParent(this);
+			materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}		
 		
@@ -208,7 +218,9 @@ public class MainController implements Initializable {
 		
 		DemandesModel demandeModel = new DemandesModel("Gestio");			
 		for(Demande d: demandeModel.demandes) {
-			fp.getChildren().add(new DemandeCardController(d).build());
+			DemandeCardController ctrl = new DemandeCardController(d);
+			ctrl.setParent(this);
+			fp.getChildren().add(ctrl.build());
 		}
 	}
 	
@@ -312,7 +324,7 @@ public class MainController implements Initializable {
 		eneableDisconected();
 	}
 	
-	private void disableAddButton() {
+	void disableAddButton() {
 		btnAjout.setDisable(true);
 		btnAjout.setVisible(false);
 	}

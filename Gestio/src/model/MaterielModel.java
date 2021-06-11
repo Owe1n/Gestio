@@ -51,6 +51,7 @@ public class MaterielModel extends Connect {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
 
+			materiel.setId(rs.getInt("id_materiel"));
 			materiel.setName(rs.getString("name"));
 			materiel.setImagePath(rs.getString("imgSrc"));
 			materiel.setNbBon(rs.getInt("nbBon"));

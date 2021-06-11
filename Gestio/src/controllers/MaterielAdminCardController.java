@@ -63,6 +63,8 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleEditMateriel(MouseEvent e){
+		parent.disableAddButton();
+
 		parent.editMateriel(materielModel);
 	}
 	

@@ -21,6 +21,7 @@ import model.UtilisateursModel;
 public class AddMaterielController extends MainController {
 	
 	private Materiel materielModel;
+	MainController parent;
 	
 	AddMaterielController(Materiel materielModel){
 		this.materielModel = materielModel;
@@ -51,13 +52,15 @@ public class AddMaterielController extends MainController {
 	
 	@FXML
 	public void handleAnnulerAjout(MouseEvent e) {
-		System.out.println("Annuler");
+		parent.pageMateriel();
 	}
 		
 	@FXML
 	public void handleClickValider(ActionEvent e) {
 		MaterielModel matModel = new MaterielModel("Gestio");
-		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())) != null ) {
+		Materiel mat = matModel.getMaterielById(Integer.parseInt(textFieldId.getText()));
+	
+		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())).getName() != null ) {
 			System.out.println("Materiel exist");
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.editMateriel(materiel);
@@ -66,6 +69,7 @@ public class AddMaterielController extends MainController {
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.addMateriel(materiel);
 		}
+		parent.pageMateriel();
 		
 	}
 	
@@ -96,6 +100,9 @@ public class AddMaterielController extends MainController {
 		}
 	
 	return card;
+	}
+	public void setParent(MainController parent) {
+		this.parent = parent;
 	}
 	
 	@Override
