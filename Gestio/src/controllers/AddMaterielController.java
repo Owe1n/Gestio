@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -57,9 +58,34 @@ public class AddMaterielController extends MainController {
 		if(textFieldId.getText() == "") {
 			textFieldId.setText("-1") ;
 		}
+		File tempFile = new File(System.getProperty("user.dir")+"\\src"+textFieldMaterielImgPath.getText());
+		boolean exists = tempFile.exists();
+		
+		if(textFieldName.getText() == "") {
+			parent.popup("Erreur nom", "Vous devez mettre un nom au produit", 2);
+			return;
+		}
+		
+		if(textFieldBon.getText() == "") {
+			textFieldBon.setText("0");
+		}
+		
+		if(textFieldMoyen.getText() == "") {
+			textFieldMoyen.setText("0");
+		}
+		
+		if(textFieldMauvais.getText() == "") {
+			textFieldMauvais.setText("0");
+		}
+		
+		if(!exists || textFieldMaterielImgPath.getText() == "") {
+			parent.popup("Erreur image", "Le chemins de l'image n'existe pas", 2);
+			return;
+		}
+		
 		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())).getName() != null ) {
 			parent.popup("Materiel modifie", "Le materiel a ete modifie avec succes !", 0);
-			
+				
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.editMateriel(materiel);
 		}else {
@@ -68,6 +94,7 @@ public class AddMaterielController extends MainController {
 			matModel.addMateriel(materiel);
 		}
 		parent.pageMateriel();
+	
 		
 	}
 	

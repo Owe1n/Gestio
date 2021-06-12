@@ -69,28 +69,53 @@ public class AddUtilisateurController extends MainController {
 		File tempFile = new File(System.getProperty("user.dir")+"\\src"+textFieldUserImgPath.getText());
 		System.out.print(tempFile);
 		boolean exists = tempFile.exists();
-		if(exists) {
-			if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
-				parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
-				int authority = 0;
-				if( isAdmin.isSelected() == true) {
-					authority = 1;
-				}; 
-				Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
-				modelUser.editUtilisateur(user);
-			}else {
-				parent.popup("Utilisateur ajoute", "L'utilisateur a ete ajoute avec succes !", 0);
-				int authority = 0;
-				if( isAdmin.isSelected() == true) {
-					authority = 1;
-				}; 
-				Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
-				modelUser.addUtilisateur(user);
-			}
-			parent.pageUtilisateurs();
-		}else {
-			parent.popup("Erreur image", "Le chemins de l'image n'existe pas", 2);
+		
+	
+		
+		if(textFieldPrenom.getText() == null) {
+			parent.popup("Erreur Prenom", "Il faut definir un prenom a votre utilisateur.", 2);
+			return;
 		}
+		
+		if(textFieldNom.getText() == null) {
+			parent.popup("Erreur Nom", "Il faut definir un nom a votre utilisateur.", 2);
+			return;
+		}
+		
+		if(textFieldEmail.getText() == null) {
+			parent.popup("Erreur Email", "Il faut definir un email a votre utilisateur.", 2);
+			return;
+		}
+		
+		if(textFieldMdp.getText() == null) {
+			parent.popup("Erreur mot de passe", "Il faut definir un mot de passe a votre utilisateur.", 2);
+			return;
+		}
+		
+		if(!exists || textFieldUserImgPath.getText() == "") {
+			parent.popup("Erreur image", "Le chemins de l'image n'existe pas.", 2);
+			return;
+		}
+			
+		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
+			parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
+			int authority = 0;
+			if( isAdmin.isSelected() == true) {
+				authority = 1;
+			}; 
+			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+			modelUser.editUtilisateur(user);
+		}else {
+			parent.popup("Utilisateur ajoute", "L'utilisateur a ete ajoute avec succes !", 0);
+			int authority = 0;
+			if( isAdmin.isSelected() == true) {
+				authority = 1;
+			}; 
+			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+			modelUser.addUtilisateur(user);
+			}
+		parent.pageUtilisateurs();
+		
 
 	}
 	
