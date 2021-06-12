@@ -48,7 +48,7 @@ public class MaterielUserCardController implements Initializable {
 	
 	@FXML
 	private void handleValiderDemande(MouseEvent e){
-		System.out.println("Commande Valid�");
+		System.out.println("Commande Valide");
 		String quantity = labelQuantite.getText();
 		DemandesModel demMod = new DemandesModel("Gestio");
 		System.out.println(parent.user.getId());
@@ -77,7 +77,7 @@ public class MaterielUserCardController implements Initializable {
 			labelQuantite.setText(String.valueOf(counterQuantite));
 		}
 		
-		}
+	}
 	
 
 	

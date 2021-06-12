@@ -96,6 +96,7 @@ public class MaterielAdminCardController implements Initializable {
 		
 		if(counterBon < 0) {
 			counterBon = 0;
+			labelBon.setText(String.valueOf(counterBon));
 		}
 		matModel.removeBonMateriel(materielModel);
 		materielModel.setNbBon(counterBon);
@@ -107,6 +108,7 @@ public class MaterielAdminCardController implements Initializable {
 		
 		if(counterMoyen < 0) {
 			counterMoyen = 0;
+			labelMoyen.setText(String.valueOf(counterMoyen));
 		}
 		matModel.removeMoyenMateriel(materielModel);
 		materielModel.setNbMoyen(counterMoyen);
@@ -118,6 +120,7 @@ public class MaterielAdminCardController implements Initializable {
 		
 		if(counterMauvais < 0) {
 			counterMauvais = 0;
+			labelMauvais.setText(String.valueOf(counterMauvais));
 		}
 		matModel.removeMauvaisMateriel(materielModel);
 		materielModel.setNbMauvais(counterMauvais);
