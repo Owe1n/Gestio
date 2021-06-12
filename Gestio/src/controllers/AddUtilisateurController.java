@@ -118,7 +118,9 @@ public class AddUtilisateurController extends MainController {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
-		textFieldId.setText(String.valueOf(this.utilisateurModel.getId()));
+		if(this.utilisateurModel.getId() != -1) {
+			textFieldId.setText(String.valueOf(this.utilisateurModel.getId()));
+		}
 		textFieldPrenom.setText(this.utilisateurModel.getFirstName());
 		textFieldNom.setText(this.utilisateurModel.getLastName());
 		textFieldEmail.setText(this.utilisateurModel.getEmail());

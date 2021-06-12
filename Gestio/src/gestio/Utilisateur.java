@@ -19,7 +19,7 @@ public class Utilisateur {
 		this.autorithyLevel = autorithyLevel;
 	}
 	public Utilisateur(){
-	
+		this.id = -1;
 	}
 
 	public String getFullName() {

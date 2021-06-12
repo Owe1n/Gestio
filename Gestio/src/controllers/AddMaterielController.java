@@ -108,12 +108,14 @@ public class AddMaterielController extends MainController {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		textFieldId.setText(String.valueOf(this.materielModel.getId()));
-		textFieldName.setText(this.materielModel.getName());
-		textFieldBon.setText(String.valueOf(this.materielModel.getNbBon()));
-		textFieldMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
-		textFieldMauvais.setText(String.valueOf(this.materielModel.getNbMauvais()));
-		textFieldMaterielImgPath.setText(this.materielModel.getImagePath());
+		if(this.materielModel.getId() != -1) {
+			textFieldId.setText(String.valueOf(this.materielModel.getId()));
+			textFieldName.setText(this.materielModel.getName());
+			textFieldBon.setText(String.valueOf(this.materielModel.getNbBon()));
+			textFieldMoyen.setText(String.valueOf(this.materielModel.getNbMoyen()));
+			textFieldMauvais.setText(String.valueOf(this.materielModel.getNbMauvais()));
+			textFieldMaterielImgPath.setText(this.materielModel.getImagePath());
+		}
 		
 	}
 	

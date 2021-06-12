@@ -16,7 +16,9 @@ public class Materiel {
 		this.setNbMoyen(nbMoyen);
 		this.setNbMauvais(nbMauvais);
 	 }
-	public Materiel() {};
+	public Materiel() {
+		this.id = -1;
+	};
 	
 	public int getTotalItem() {
 		return getNbBon()+getNbMoyen()+getNbMauvais();
