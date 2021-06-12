@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -65,26 +66,32 @@ public class AddUtilisateurController extends MainController {
 		if(textFieldId.getText() == "") {
 			textFieldId.setText("-1") ;
 		}
-		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
-			parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
-			int authority = 0;
-			if( isAdmin.isSelected() == true) {
-				authority = 1;
-			}; 
-			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
-			modelUser.editUtilisateur(user);
+		File tempFile = new File(System.getProperty("user.dir")+"\\src"+textFieldUserImgPath.getText());
+		System.out.print(tempFile);
+		boolean exists = tempFile.exists();
+		if(exists) {
+			if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
+				parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
+				int authority = 0;
+				if( isAdmin.isSelected() == true) {
+					authority = 1;
+				}; 
+				Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+				modelUser.editUtilisateur(user);
+			}else {
+				parent.popup("Utilisateur ajoute", "L'utilisateur a ete ajoute avec succes !", 0);
+				int authority = 0;
+				if( isAdmin.isSelected() == true) {
+					authority = 1;
+				}; 
+				Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
+				modelUser.addUtilisateur(user);
+			}
+			parent.pageUtilisateurs();
 		}else {
-			parent.popup("Utilisateur ajoute", "L'utilisateur a ete ajoute avec succes !", 0);
-			int authority = 0;
-			if( isAdmin.isSelected() == true) {
-				authority = 1;
-			}; 
-			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
-			modelUser.addUtilisateur(user);
+			parent.popup("Erreur image", "Le chemins de l'image n'existe pas", 2);
 		}
-		parent.pageUtilisateurs();
-		
-		
+
 	}
 	
 	public void addUserInformation(String Prenom, String nom, String email, String mdp, String userImgPath) {
