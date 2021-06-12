@@ -18,8 +18,7 @@ public class Materiel {
 	 }
 	public Materiel() {
 		this.id = -1;
-	};
-	
+	}	
 	public int getTotalItem() {
 		return getNbBon()+getNbMoyen()+getNbMauvais();
 	}
