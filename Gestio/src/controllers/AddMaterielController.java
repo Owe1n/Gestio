@@ -5,17 +5,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import gestio.Materiel;
-import gestio.Utilisateur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.MaterielModel;
-import model.UtilisateursModel;
 
 
 public class AddMaterielController extends MainController {
@@ -58,14 +54,13 @@ public class AddMaterielController extends MainController {
 	@FXML
 	public void handleClickValider(ActionEvent e) {
 		MaterielModel matModel = new MaterielModel("Gestio");
-		Materiel mat = matModel.getMaterielById(Integer.parseInt(textFieldId.getText()));
 	
 		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())).getName() != null ) {
-			System.out.println("Materiel exist");
+			parent.popup("Materiel modifie", "Le materiel a ete modifie avec succes !", 0);
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.editMateriel(materiel);
 		}else {
-			System.out.println("Materiel doas not exist");
+			parent.popup("Materiel ajoute", "Le materiel a ete cree avec succes !", 0);
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.addMateriel(materiel);
 		}

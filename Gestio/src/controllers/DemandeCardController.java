@@ -18,7 +18,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -76,19 +75,8 @@ public class DemandeCardController implements Initializable {
 		DemandesModel demMod = new DemandesModel("Gestio");
 		demMod.validerDemande(demandeModel);
 		parent.pageDemandes();
-		
-		
+		parent.popup("Retours valide", "La base de données a ete mise à jour avec succes !", 0);
 	}
-
-	
-	@FXML
-	public void handleClickRefuser(MouseEvent e) {
-		System.out.println("Refuse");
-		DemandesModel demMod = new DemandesModel("Gestio");
-		demMod.validerDemande(demandeModel);
-		parent.pageDemandes();
-	}
-	
 
 
 	@Override

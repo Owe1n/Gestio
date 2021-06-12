@@ -9,8 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.UtilisateursModel;
@@ -37,7 +35,7 @@ public class LoginController implements Initializable {
 	
 		if (mdpInput.getText().equals(user.getPassword()) && emailInput.getText().equals(user.getEmail())
 				&& user.getAutorithyLevel() == 1) {
-			parent.popup("Connexion valide", "Bonjour "+user.getFullName()+", vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !", 0);
+			parent.popup("Connexion valide", "Bonjour "+user.getFullName()+", vous etes maintenant connecté à Gestion !", 0);
 			parent.launchAppAdmin(user);
 
 		} else if (mdpInput.getText().equals(user.getPassword()) && emailInput.getText().equals(user.getEmail())

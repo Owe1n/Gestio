@@ -63,7 +63,7 @@ public class AddUtilisateurController extends MainController {
 	public void handleClickValider(ActionEvent e) {
 		UtilisateursModel modelUser = new UtilisateursModel("Gestio");
 		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
-			System.out.println("User exist");
+			parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
 			int authority = 0;
 			if( isAdmin.isSelected() == true) {
 				authority = 1;
@@ -71,7 +71,7 @@ public class AddUtilisateurController extends MainController {
 			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);
 			modelUser.editUtilisateur(user);
 		}else {
-			System.out.println("User does not exist");
+			parent.popup("Utilisateur ajoute", "L'utilisateur a ete ajoute avec succes !", 0);
 			int authority = 0;
 			if( isAdmin.isSelected() == true) {
 				authority = 1;

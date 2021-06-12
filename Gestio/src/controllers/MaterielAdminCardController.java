@@ -15,7 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import model.MaterielModel;
-import model.UtilisateursModel;
 
 public class MaterielAdminCardController implements Initializable {
 
@@ -56,7 +55,7 @@ public class MaterielAdminCardController implements Initializable {
 	
 	@FXML
 	private void handleDeleteMateriel(MouseEvent e){
-		System.out.println("Delete");
+		parent.popup("Materiel supprime", "Attention vous avez suprime un materiel", 1);
 		matModel.deleteMateriel(materielModel);
 		parent.pageMateriel();
 	}

@@ -43,7 +43,7 @@ public class UtilisateurCardController implements Initializable {
 	
 	@FXML
 	public void handleClickDelete(MouseEvent e) {
-		System.out.println("Profil Suprim�");
+		parent.popup("Utilisateur supprime", "Attention vous avez suprime un utilisateur", 1);
 		UtilisateursModel userModel = new UtilisateursModel("Gestio");
 		userModel.deleteUtilisateur(utilisateurModel);
 		parent.pageUtilisateurs();

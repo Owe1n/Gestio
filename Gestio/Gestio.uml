@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_Tr7z4MuIEeuxjemY3k1E9w" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_Tr_eQMuIEeuxjemY3k1E9w" source="codegen">
         <details xmi:id="_Tr_eQcuIEeuxjemY3k1E9w" key="codegenDirectory" value="/Gestio/src"/>
-        <details xmi:id="_XuIeAMuIEeuxjemY3k1E9w" key="AssociatedSourceCode" value="/Gestio/src/gestio/Materiel.java;1836472468/1;/Gestio/src/controllers/AddMaterielController.java;3280472225/1;/Gestio/src/controllers/AddUtilisateurController.java;2660204437/1;/Gestio/src/controllers/DemandeCardController.java;1671153597/1;/Gestio/src/controllers/LoginController.java;305065382/1;/Gestio/src/model/DemandesModel.java;145664970/1;/Gestio/src/controllers/MaterielUserCardController.java;2089384740/1;/Gestio/src/controllers/UtilisateurCardController.java;1767391024/1;/Gestio/src/gestio/Demande.java;1348800978/1;/Gestio/src/gestio/MainApp.java;4212983412/1;/Gestio/src/gestio/Utilisateur.java;3597027745/1;/Gestio/src/controllers/MaterielAdminCardController.java;3339830521/1;/Gestio/src/model/MaterielModel.java;310930566/1;/Gestio/src/model/UtilisateursModel.java;2525581588/1;/Gestio/src/controllers/MainController.java;1204051164/1;/Gestio/src/tools/Connect.java;1607442943/1;"/>
+        <details xmi:id="_XuIeAMuIEeuxjemY3k1E9w" key="AssociatedSourceCode" value="/Gestio/src/gestio/Materiel.java;1836472468/1;/Gestio/src/controllers/AddMaterielController.java;615169974/1;/Gestio/src/controllers/AddUtilisateurController.java;4094582840/1;/Gestio/src/controllers/DemandeCardController.java;2386853155/1;/Gestio/src/controllers/LoginController.java;718203677/1;/Gestio/src/model/DemandesModel.java;1820874988/1;/Gestio/src/controllers/MaterielUserCardController.java;1799763500/1;/Gestio/src/controllers/UtilisateurCardController.java;550712644/1;/Gestio/src/gestio/Demande.java;1348800978/1;/Gestio/src/gestio/MainApp.java;2483224283/1;/Gestio/src/gestio/Utilisateur.java;3597027745/1;/Gestio/src/controllers/MaterielAdminCardController.java;1764243043/1;/Gestio/src/model/MaterielModel.java;2329066659/1;/Gestio/src/model/UtilisateursModel.java;2525581588/1;/Gestio/src/controllers/MainController.java;3832008485/1;/Gestio/src/tools/Connect.java;255798418/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_UHVWcMuIEeuxjemY3k1E9w">
@@ -460,7 +460,9 @@
           <ownedParameter xmi:id="_UVQdscuIEeuxjemY3k1E9w" name="name_of_db">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_UVQdssuIEeuxjemY3k1E9w" type="_ULIRUMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVQdssuIEeuxjemY3k1E9w" type="_ULIRUMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(name_of_db);&#xD;
 		// TODO Auto-generated constructor stub&#xD;
@@ -469,10 +471,11 @@
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVQds8uIEeuxjemY3k1E9w" name="getDemandsByUser" specification="_UR-gMMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVQdtMuIEeuxjemY3k1E9w" name="user" type="_ULrq8MuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVQdtcuIEeuxjemY3k1E9w" type="_ULfdsMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVQdtcuIEeuxjemY3k1E9w" type="_ULfdsMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
-          <body>UtilisateursModel userModel = new UtilisateursModel(&quot;Gestio&quot;);&#xD;
-		MaterielModel materielModel = new MaterielModel(&quot;Gestio&quot;);&#xD;
+          <body>MaterielModel materielModel = new MaterielModel(&quot;Gestio&quot;);&#xD;
 		Demande demande = new Demande();&#xD;
 		demande.setUser(user);&#xD;
 		&#xD;
@@ -513,7 +516,9 @@
           <ownedParameter xmi:id="_UVQdt8uIEeuxjemY3k1E9w" name="typeDemande">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_UVQduMuIEeuxjemY3k1E9w" type="_URjpcMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVQduMuIEeuxjemY3k1E9w" type="_URjpcMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>UtilisateursModel userModel = new UtilisateursModel(&quot;Gestio&quot;);&#xD;
 		MaterielModel materielModel = new MaterielModel(&quot;Gestio&quot;);&#xD;
@@ -700,14 +705,18 @@
           <ownedParameter xmi:id="_UVXyccuIEeuxjemY3k1E9w" name="name_of_db">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_UVXycsuIEeuxjemY3k1E9w" type="_UL7ikMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVXycsuIEeuxjemY3k1E9w" type="_UL7ikMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>super(name_of_db);&#xD;
 		this.materiels = getAllMateriel();&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVYZgMuIEeuxjemY3k1E9w" name="getAllMateriel" specification="_UL9XwcuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVYZgcuIEeuxjemY3k1E9w" type="_URjpcMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVYZgcuIEeuxjemY3k1E9w" type="_URjpcMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>String sql = &quot;SELECT * FROM materiel&quot;;&#xD;
 		ArrayList&lt;Materiel> materielTemp = new ArrayList&lt;Materiel>();&#xD;
@@ -735,7 +744,9 @@
           <ownedParameter xmi:id="_UVYZg8uIEeuxjemY3k1E9w" name="id">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_UVYZhMuIEeuxjemY3k1E9w" type="_ULmycMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVYZhMuIEeuxjemY3k1E9w" type="_ULmycMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>String sql = &quot;SELECT * FROM materiel WHERE id_materiel = &quot; + id + &quot;&quot;;&#xD;
 		Materiel materiel = new Materiel();&#xD;
@@ -1177,13 +1188,17 @@
         <ownedAttribute xmi:id="_UUN748uIEeuxjemY3k1E9w" name="textFieldMaterielImgPath" visibility="private" type="_URTx0cuIEeuxjemY3k1E9w" association="_UWAEkcuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVGssMuIEeuxjemY3k1E9w" name="AddMaterielController" specification="_URWOEcuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVGsscuIEeuxjemY3k1E9w" name="materielModel" type="_ULmycMuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVGsssuIEeuxjemY3k1E9w" type="_UKOSYMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVGsssuIEeuxjemY3k1E9w" type="_UKOSYMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.materielModel = materielModel;&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVJwAMuIEeuxjemY3k1E9w" name="AddMaterielController" specification="_UKUZAMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVJwAcuIEeuxjemY3k1E9w" type="_UKOSYMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVJwAcuIEeuxjemY3k1E9w" type="_UKOSYMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>Materiel nullMateriel = new Materiel();&#xD;
 		this.materielModel = nullMateriel;&#xD;
@@ -1199,14 +1214,13 @@
           <ownedParameter xmi:id="_UVKXEsuIEeuxjemY3k1E9w" name="e" type="_URPgYMuIEeuxjemY3k1E9w"/>
           <language>java</language>
           <body>MaterielModel matModel = new MaterielModel(&quot;Gestio&quot;);&#xD;
-		Materiel mat = matModel.getMaterielById(Integer.parseInt(textFieldId.getText()));&#xD;
 	&#xD;
 		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())).getName() != null ) {&#xD;
-			System.out.println(&quot;Materiel exist&quot;);&#xD;
+			parent.popup(&quot;Materiel modifie&quot;, &quot;Le materiel a ete modifie avec succes !&quot;, 0);&#xD;
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));&#xD;
 			matModel.editMateriel(materiel);&#xD;
 		}else {&#xD;
-			System.out.println(&quot;Materiel doas not exist&quot;);&#xD;
+			parent.popup(&quot;Materiel ajoute&quot;, &quot;Le materiel a ete cree avec succes !&quot;, 0);&#xD;
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));&#xD;
 			matModel.addMateriel(materiel);&#xD;
 		}&#xD;
@@ -1239,7 +1253,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVK-IMuIEeuxjemY3k1E9w" name="build" specification="_UKZ4kMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVK-IcuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVK-IcuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 		&#xD;
@@ -1343,13 +1359,17 @@
         <ownedAttribute xmi:id="_UUUCgsuIEeuxjemY3k1E9w" name="validerBtn" visibility="private" type="_URR8ocuIEeuxjemY3k1E9w" association="_UWGLMMuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVMMQMuIEeuxjemY3k1E9w" name="AddUtilisateurController" specification="_UReJ4MuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVMMQcuIEeuxjemY3k1E9w" name="utilisateurModel" type="_ULrq8MuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVMMQsuIEeuxjemY3k1E9w" type="_UKkQoMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVMMQsuIEeuxjemY3k1E9w" type="_UKkQoMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.utilisateurModel = utilisateurModel;&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVMMQ8uIEeuxjemY3k1E9w" name="AddUtilisateurController" specification="_UKmF0MuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVMMRMuIEeuxjemY3k1E9w" type="_UKkQoMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVMMRMuIEeuxjemY3k1E9w" type="_UKkQoMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>Utilisateur nullUser = new Utilisateur();&#xD;
 		this.utilisateurModel = nullUser;&#xD;
@@ -1367,7 +1387,7 @@
           <language>java</language>
           <body>UtilisateursModel modelUser = new UtilisateursModel(&quot;Gestio&quot;);&#xD;
 		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {&#xD;
-			System.out.println(&quot;User exist&quot;);&#xD;
+			parent.popup(&quot;Utilisateur modifie&quot;, &quot;L'utilisateur a ete modifie avec succes !&quot;, 0);&#xD;
 			int authority = 0;&#xD;
 			if( isAdmin.isSelected() == true) {&#xD;
 				authority = 1;&#xD;
@@ -1375,7 +1395,7 @@
 			Utilisateur user = new Utilisateur(Integer.parseInt(textFieldId.getText()), textFieldPrenom.getText(), textFieldNom.getText(), textFieldEmail.getText(), textFieldMdp.getText(), textFieldUserImgPath.getText(), authority);&#xD;
 			modelUser.editUtilisateur(user);&#xD;
 		}else {&#xD;
-			System.out.println(&quot;User does not exist&quot;);&#xD;
+			parent.popup(&quot;Utilisateur ajoute&quot;, &quot;L'utilisateur a ete ajoute avec succes !&quot;, 0);&#xD;
 			int authority = 0;&#xD;
 			if( isAdmin.isSelected() == true) {&#xD;
 				authority = 1;&#xD;
@@ -1413,7 +1433,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVMzWMuIEeuxjemY3k1E9w" name="build" specification="_UKpwMcuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVMzWcuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVMzWcuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 		&#xD;
@@ -1520,13 +1542,17 @@
         <interfaceRealization xmi:id="_UTPEcMuIEeuxjemY3k1E9w" client="_UK19cMuIEeuxjemY3k1E9w" supplier="_URmFscuIEeuxjemY3k1E9w" contract="_URmFscuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVOBcMuIEeuxjemY3k1E9w" name="DemandeCardController" specification="_URuBgMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVOBccuIEeuxjemY3k1E9w" name="demandeModel" type="_ULfdsMuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVOBcsuIEeuxjemY3k1E9w" type="_UK19cMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVOBcsuIEeuxjemY3k1E9w" type="_UK19cMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.demandeModel = demandeModel;&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVOBc8uIEeuxjemY3k1E9w" name="build" specification="_UK4ZsMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVOBdMuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVOBdMuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 		&#xD;
@@ -1555,17 +1581,7 @@
 		DemandesModel demMod = new DemandesModel(&quot;Gestio&quot;);&#xD;
 		demMod.validerDemande(demandeModel);&#xD;
 		parent.pageDemandes();&#xD;
-		&#xD;
-		&#xD;
-	</body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVOogsuIEeuxjemY3k1E9w" name="handleClickRefuser" specification="_UTRgssuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVOog8uIEeuxjemY3k1E9w" name="e" type="_URUY4cuIEeuxjemY3k1E9w"/>
-          <language>java</language>
-          <body>System.out.println(&quot;Refuse&quot;);&#xD;
-		DemandesModel demMod = new DemandesModel(&quot;Gestio&quot;);&#xD;
-		demMod.validerDemande(demandeModel);&#xD;
-		parent.pageDemandes();&#xD;
+		parent.popup(&quot;Retours valide&quot;, &quot;La base de données a ete mise à jour avec succes !&quot;, 0);&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVOohMuIEeuxjemY3k1E9w" name="initialize" specification="_UTSHwsuIEeuxjemY3k1E9w">
@@ -1639,9 +1655,6 @@
         <ownedOperation xmi:id="_UTQ5oMuIEeuxjemY3k1E9w" name="handleClickValider" method="_UVOogMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UTQ5ocuIEeuxjemY3k1E9w" name="e" type="_URPgYMuIEeuxjemY3k1E9w"/>
         </ownedOperation>
-        <ownedOperation xmi:id="_UTRgssuIEeuxjemY3k1E9w" name="handleClickRefuser" method="_UVOogsuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UTRgs8uIEeuxjemY3k1E9w" name="e" type="_URUY4cuIEeuxjemY3k1E9w"/>
-        </ownedOperation>
         <ownedOperation xmi:id="_UTSHwsuIEeuxjemY3k1E9w" name="initialize" method="_UVOohMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UTSHw8uIEeuxjemY3k1E9w" name="arg0" type="_URNEIMuIEeuxjemY3k1E9w"/>
           <ownedParameter xmi:id="_UTSHxMuIEeuxjemY3k1E9w" name="arg1" type="_UROSQcuIEeuxjemY3k1E9w"/>
@@ -1667,7 +1680,7 @@
 	&#xD;
 		if (mdpInput.getText().equals(user.getPassword()) &amp;&amp; emailInput.getText().equals(user.getEmail())&#xD;
 				&amp;&amp; user.getAutorithyLevel() == 1) {&#xD;
-			parent.popup(&quot;Connexion valide&quot;, &quot;Bonjour &quot;+user.getFullName()+&quot;, vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !&quot;, 0);&#xD;
+			parent.popup(&quot;Connexion valide&quot;, &quot;Bonjour &quot;+user.getFullName()+&quot;, vous etes maintenant connecté à Gestion !&quot;, 0);&#xD;
 			parent.launchAppAdmin(user);&#xD;
 &#xD;
 		} else if (mdpInput.getText().equals(user.getPassword()) &amp;&amp; emailInput.getText().equals(user.getEmail())&#xD;
@@ -1682,7 +1695,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVP2oMuIEeuxjemY3k1E9w" name="build" specification="_ULCxwMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVP2ocuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVP2ocuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 &#xD;
@@ -1736,7 +1751,9 @@
         <interfaceRealization xmi:id="_UTXnUMuIEeuxjemY3k1E9w" client="_ULQ0MMuIEeuxjemY3k1E9w" supplier="_URmFscuIEeuxjemY3k1E9w" contract="_URmFscuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVRExsuIEeuxjemY3k1E9w" name="MaterielUserCardController" specification="_USEm0MuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVREx8uIEeuxjemY3k1E9w" name="materielModel" type="_ULmycMuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVREyMuIEeuxjemY3k1E9w" type="_ULQ0MMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVREyMuIEeuxjemY3k1E9w" type="_ULQ0MMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.materielModel = materielModel;&#xD;
 	</body>
@@ -1750,6 +1767,7 @@
 		System.out.println(parent.user.getId());&#xD;
 		demMod.addDemand(parent.user, materielModel, Integer.parseInt(quantity));&#xD;
 		parent.launchAppUser(parent.user);&#xD;
+		parent.popup(&quot;Demande effectue&quot;, &quot;La demmande a ete effectue avec succes !&quot;, 0);&#xD;
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVRr0suIEeuxjemY3k1E9w" name="handleAddQuantite" specification="_UTaDksuIEeuxjemY3k1E9w">
@@ -1777,7 +1795,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVSS4MuIEeuxjemY3k1E9w" name="build" specification="_ULSpYMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVSS4cuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVSS4cuIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;		&#xD;
 			&#xD;
@@ -1864,7 +1884,9 @@
         <interfaceRealization xmi:id="_UTgKMMuIEeuxjemY3k1E9w" client="_ULYwAMuIEeuxjemY3k1E9w" supplier="_URmFscuIEeuxjemY3k1E9w" contract="_URmFscuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVSS58uIEeuxjemY3k1E9w" name="UtilisateurCardController" specification="_USKtcMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVSS6MuIEeuxjemY3k1E9w" name="utilisateurModel" type="_ULrq8MuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVSS6cuIEeuxjemY3k1E9w" type="_ULYwAMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVSS6cuIEeuxjemY3k1E9w" type="_ULYwAMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.utilisateurModel = utilisateurModel;&#xD;
 	</body>
@@ -1878,7 +1900,7 @@
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVS58suIEeuxjemY3k1E9w" name="handleClickDelete" specification="_UTh_YMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVS588uIEeuxjemY3k1E9w" name="e" type="_URUY4cuIEeuxjemY3k1E9w"/>
           <language>java</language>
-          <body>System.out.println(&quot;Profil Suprimï¿½&quot;);&#xD;
+          <body>parent.popup(&quot;Utilisateur supprime&quot;, &quot;Attention vous avez suprime un utilisateur&quot;, 1);&#xD;
 		UtilisateursModel userModel = new UtilisateursModel(&quot;Gestio&quot;);&#xD;
 		userModel.deleteUtilisateur(utilisateurModel);&#xD;
 		parent.pageUtilisateurs();&#xD;
@@ -1894,7 +1916,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVS59suIEeuxjemY3k1E9w" name="build" specification="_ULalMMuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVS598uIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVS598uIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 		&#xD;
@@ -1978,7 +2002,9 @@
         <interfaceRealization xmi:id="_UTsXcMuIEeuxjemY3k1E9w" client="_ULxxkMuIEeuxjemY3k1E9w" supplier="_URmFscuIEeuxjemY3k1E9w" contract="_URmFscuIEeuxjemY3k1E9w"/>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVV9TcuIEeuxjemY3k1E9w" name="MaterielAdminCardController" specification="_USVFgMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVV9TsuIEeuxjemY3k1E9w" name="materielModel" type="_ULmycMuIEeuxjemY3k1E9w"/>
-          <ownedParameter xmi:id="_UVV9T8uIEeuxjemY3k1E9w" type="_ULxxkMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVV9T8uIEeuxjemY3k1E9w" type="_ULxxkMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>this.materielModel = materielModel;&#xD;
 	</body>
@@ -1992,7 +2018,7 @@
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVWkUsuIEeuxjemY3k1E9w" name="handleDeleteMateriel" specification="_UTtlkMuIEeuxjemY3k1E9w">
           <ownedParameter xmi:id="_UVWkU8uIEeuxjemY3k1E9w" name="e" type="_URUY4cuIEeuxjemY3k1E9w"/>
           <language>java</language>
-          <body>System.out.println(&quot;Delete&quot;);&#xD;
+          <body>parent.popup(&quot;Materiel supprime&quot;, &quot;Attention vous avez suprime un materiel&quot;, 1);&#xD;
 		matModel.deleteMateriel(materielModel);&#xD;
 		parent.pageMateriel();&#xD;
 	</body>
@@ -2070,7 +2096,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UVXLZsuIEeuxjemY3k1E9w" name="build" specification="_UL0N0MuIEeuxjemY3k1E9w">
-          <ownedParameter xmi:id="_UVXLZ8uIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVXLZ8uIEeuxjemY3k1E9w" type="_URVnAcuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>AnchorPane card = null;&#xD;
 		&#xD;
@@ -2787,7 +2815,9 @@
           <ownedParameter xmi:id="_UVd5EcuIEeuxjemY3k1E9w" name="name_of_db">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
-          <ownedParameter xmi:id="_UVd5EsuIEeuxjemY3k1E9w" type="_UMe8MMuIEeuxjemY3k1E9w" direction="return"/>
+          <ownedParameter xmi:id="_UVd5EsuIEeuxjemY3k1E9w" type="_UMe8MMuIEeuxjemY3k1E9w" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>conn = null;&#xD;
      String localDir = System.getProperty(&quot;user.dir&quot;);&#xD;
@@ -3002,10 +3032,6 @@
   <UMLLabProfile:LegacyStyledElement xmi:id="_UTQ5osuIEeuxjemY3k1E9w" base_Element="_UTQ5oMuIEeuxjemY3k1E9w"/>
   <UMLLabProfile:Annotations xmi:id="_UTRgsMuIEeuxjemY3k1E9w" base_Element="_UTQ5oMuIEeuxjemY3k1E9w">
     <annotations xmi:id="_UTRgscuIEeuxjemY3k1E9w" name="FXML"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_UTRgtMuIEeuxjemY3k1E9w" base_Element="_UTRgssuIEeuxjemY3k1E9w"/>
-  <UMLLabProfile:Annotations xmi:id="_UTSHwMuIEeuxjemY3k1E9w" base_Element="_UTRgssuIEeuxjemY3k1E9w">
-    <annotations xmi:id="_UTSHwcuIEeuxjemY3k1E9w" name="FXML"/>
   </UMLLabProfile:Annotations>
   <UMLLabProfile:LegacyStyledElement xmi:id="_UTSu0MuIEeuxjemY3k1E9w" base_Element="_UTSHwsuIEeuxjemY3k1E9w"/>
   <UMLLabProfile:Annotations xmi:id="_UTSu0cuIEeuxjemY3k1E9w" base_Element="_UTSHwsuIEeuxjemY3k1E9w">

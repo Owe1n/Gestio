@@ -8,7 +8,6 @@ import gestio.Materiel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -54,6 +53,7 @@ public class MaterielUserCardController implements Initializable {
 		System.out.println(parent.user.getId());
 		demMod.addDemand(parent.user, materielModel, Integer.parseInt(quantity));
 		parent.launchAppUser(parent.user);
+		parent.popup("Demande effectue", "La demmande a ete effectue avec succes !", 0);
 	}
 	
 	@FXML

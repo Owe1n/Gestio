@@ -1,16 +1,10 @@
 package gestio;
 
-import java.util.ArrayList;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.DemandesModel;
-import model.MaterielModel;
-import model.UtilisateursModel;
-import tools.Connect;
 
 
 public class MainApp extends Application {

@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import gestio.Materiel;
-import gestio.Utilisateur;
 import tools.Connect;
 
 public class MaterielModel extends Connect {

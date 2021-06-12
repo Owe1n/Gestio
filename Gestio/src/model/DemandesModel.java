@@ -7,17 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.function.BiFunction;
 
 import gestio.Materiel;
 import gestio.Utilisateur;
 import tools.Connect;
 import gestio.Demande;
-import model.UtilisateursModel;
-import model.MaterielModel;
 public class DemandesModel extends Connect {
 
 	
@@ -31,7 +26,6 @@ public class DemandesModel extends Connect {
 	}
 	
 	public Demande getDemandsByUser(Utilisateur user){
-		UtilisateursModel userModel = new UtilisateursModel("Gestio");
 		MaterielModel materielModel = new MaterielModel("Gestio");
 		Demande demande = new Demande();
 		demande.setUser(user);
