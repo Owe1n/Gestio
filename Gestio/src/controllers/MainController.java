@@ -90,7 +90,7 @@ public class MainController implements Initializable {
 	@FXML
 	private void handleDisconected(MouseEvent e) {
 		disableBtnNav();
-
+		popup("Deconnexion", "Vous vous etes bien deconnecte.", 0);
 		loadPageLogin("/vues/Login");
 	}	
 	
@@ -312,7 +312,7 @@ public class MainController implements Initializable {
 		popupCard.setTranslateX(320);
 		
 		TranslateTransition transition = new TranslateTransition();
-		transition.setDuration(Duration.millis(400));
+		transition.setDuration(Duration.millis(200));
 		transition.setToX(0);
 		transition.setNode(popupCard);
 		transition.play();
@@ -323,8 +323,8 @@ public class MainController implements Initializable {
 	private void popupRetour() {
 		popupCard.setTranslateX(0);
 		TranslateTransition transition = new TranslateTransition();
-		transition.setDuration(Duration.millis(400));
-		transition.setDelay(Duration.seconds(5));
+		transition.setDuration(Duration.millis(200));
+		transition.setDelay(Duration.millis(3700));
 		transition.setToX(320);
 		transition.setNode(popupCard);
 		transition.play();
