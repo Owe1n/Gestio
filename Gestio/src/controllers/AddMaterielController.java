@@ -54,9 +54,12 @@ public class AddMaterielController extends MainController {
 	@FXML
 	public void handleClickValider(ActionEvent e) {
 		MaterielModel matModel = new MaterielModel("Gestio");
-	
+		if(textFieldId.getText() == "") {
+			textFieldId.setText("-1") ;
+		}
 		if(matModel.getMaterielById(Integer.parseInt(textFieldId.getText())).getName() != null ) {
 			parent.popup("Materiel modifie", "Le materiel a ete modifie avec succes !", 0);
+			
 			Materiel materiel = new Materiel(Integer.parseInt(textFieldId.getText()),textFieldName.getText(),textFieldMaterielImgPath.getText(),Integer.parseInt(textFieldBon.getText()),Integer.parseInt(textFieldMoyen.getText()),Integer.parseInt(textFieldMauvais.getText()));
 			matModel.editMateriel(materiel);
 		}else {
@@ -68,13 +71,6 @@ public class AddMaterielController extends MainController {
 		
 	}
 	
-	public void addMaterielInformation(String name, Integer bon, Integer moyen, Integer mauvais, String materielImgPath) {
-		textFieldName.setText(name);
-		textFieldBon.setText(String.valueOf(bon));
-		textFieldMoyen.setText(String.valueOf(moyen));
-		textFieldMauvais.setText(String.valueOf(mauvais));
-		textFieldMaterielImgPath.setText(materielImgPath);
-	}
 	
 	public AnchorPane build() {
 		AnchorPane card = null;

@@ -62,6 +62,9 @@ public class AddUtilisateurController extends MainController {
 	@FXML
 	public void handleClickValider(ActionEvent e) {
 		UtilisateursModel modelUser = new UtilisateursModel("Gestio");
+		if(textFieldId.getText() == "") {
+			textFieldId.setText("-1") ;
+		}
 		if(modelUser.getUtilisateurById(Integer.parseInt(textFieldId.getText())).getFirstName() != null ) {
 			parent.popup("Utilisateur modifie", "L'utilisateur a ete modifie avec succes !", 0);
 			int authority = 0;
