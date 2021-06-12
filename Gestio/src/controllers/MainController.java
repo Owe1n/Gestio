@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import gestio.Demande;
 import gestio.Materiel;
 import gestio.Utilisateur;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+import javafx.util.Duration;
 import model.DemandesModel;
 import model.MaterielModel;
 import model.UtilisateursModel;
@@ -61,9 +66,18 @@ public class MainController implements Initializable {
 	private Button btnAjout;
 	
 	@FXML
+	private AnchorPane popupCard;
+	
+	@FXML
+	private TextFlow popupCardTitle;
+	
+	@FXML
+	private TextFlow popupCardTextFlow;
+	
+	@FXML
 	private void handleClickAjout(MouseEvent e) {
 		//Ajouter Utilisateur
-		//Ajouter Mat�riel
+		//Ajouter Materiel
 		
 		if(btnAjout.getText().equals("Ajouter Utilisateur")) {
 			addUtilisateur();
@@ -262,19 +276,60 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		disableBtnNav();
+			
 	
-	
-	
-	
-
-		
-	
+		popupCard.setTranslateX(320);
 		loadPageLogin("/vues/Login");
 		//loadPage("/vues/AddUtilisateur");
 		
 		//fp.getChildren().add(addMatC.build());
 
 
+	}
+	
+	public void popup(String title, String text, Integer type) {
+		//type 0 = bien 	= green
+		//type 1 = moyen	= orange 
+		//type 2 = mauvais	= red
+		
+		popupCardTitle.getChildren().clear();
+		Text t1 = new Text(title);
+		
+		
+		if(type == 0) {
+			t1.setFill(Color.web("#56d862"));
+		}else if(type == 1) {
+			t1.setFill(Color.web("#ffa412"));
+		}else if(type == 2) {
+			t1.setFill(Color.web("#ff3f0b"));
+		}
+		popupCardTitle.getChildren().add(t1);
+		
+		popupCardTextFlow.getChildren().clear();
+		Text t2 = new Text(text);
+		popupCardTextFlow.getChildren().add(t2);
+		
+		//annimation
+		
+		popupCard.setTranslateX(320);
+		
+		TranslateTransition transition = new TranslateTransition();
+		transition.setDuration(Duration.millis(400));
+		transition.setToX(0);
+		transition.setNode(popupCard);
+		transition.play();
+		popupRetour();
+		
+	}
+	
+	private void popupRetour() {
+		popupCard.setTranslateX(0);
+		TranslateTransition transition = new TranslateTransition();
+		transition.setDuration(Duration.millis(400));
+		transition.setDelay(Duration.seconds(5));
+		transition.setToX(320);
+		transition.setNode(popupCard);
+		transition.play();
 	}
 	
 

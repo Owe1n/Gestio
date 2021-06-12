@@ -37,15 +37,16 @@ public class LoginController implements Initializable {
 	
 		if (mdpInput.getText().equals(user.getPassword()) && emailInput.getText().equals(user.getEmail())
 				&& user.getAutorithyLevel() == 1) {
-			System.out.println("Connectï¿½ Admin !!");
+			parent.popup("Connexion valide", "Bonjour "+user.getFullName()+", vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !vous etes maintenant connecté à Gestion !", 0);
 			parent.launchAppAdmin(user);
 
 		} else if (mdpInput.getText().equals(user.getPassword()) && emailInput.getText().equals(user.getEmail())
 				&& user.getAutorithyLevel() == 0) {
-			System.out.println("Connectï¿½ user");
+			parent.popup("Connexion valide", "Bonjour "+user.getFullName()+", vous etes maintenant connecté à Gestion !", 0);
 			parent.launchAppUser(user);
 		} else {
 			System.out.println("Erreur");
+			parent.popup("Erreur de connexion", "Identifiant ou mot de passe incorrecte", 2);
 		}
 
 	}
