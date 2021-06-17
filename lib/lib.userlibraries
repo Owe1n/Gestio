@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="JavaFx" systemlibrary="false">
+        <archive path="/Gestio/lib/javaFx/lib/javafx.base.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.controls.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.fxml.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.graphics.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.media.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.swing.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx.web.jar"/>
+        <archive path="/Gestio/lib/javaFx/lib/javafx-swt.jar"/>
+    </library>
+    <library name="SQLITE" systemlibrary="false">
+        <archive path="/Gestio/lib/sqlite/sqlite-jdbc-3.34.0.jar"/>
+    </library>
+</eclipse-userlibraries>
