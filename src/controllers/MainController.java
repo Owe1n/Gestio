@@ -79,6 +79,15 @@ public class MainController implements Initializable {
 		if (btnAjout.getText().equals("Ajouter Utilisateur")) {
 			addUtilisateur();
 			disableAddButton();
+		} else if(btnAjout.getText().equals("Rafraichir")) {
+			fp.getChildren().clear();
+
+			MaterielModel materielModel = new MaterielModel("Gestio");
+			for (Materiel m : materielModel.materiels) {
+				MaterielUserCardController materielCardController = new MaterielUserCardController(m);
+				materielCardController.setParent(this);
+				fp.getChildren().add(materielCardController.build());
+			}
 		} else {
 			addMateriel();
 			disableAddButton();
@@ -206,6 +215,9 @@ public class MainController implements Initializable {
 			materielCardController.setParent(this);
 			fp.getChildren().add(materielCardController.build());
 		}
+		
+		btnAjout.setText("Rafraichir");
+		enableAddButton();
 
 	}
 

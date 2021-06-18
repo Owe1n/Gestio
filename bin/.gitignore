@@ -1,1 +1,7 @@
 /.classpath
+/sqlite/
+/controllers/
+/gestio/
+/model/
+/module-info.class
+/tools/
